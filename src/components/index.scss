@@ -1,0 +1,23 @@
+// Needed if messing with adding custom variables
+// @import "~bootstrap/scss/functions";
+
+$primary:    #54c44e;
+$secondary:  #adffed;
+$success:    #ffffff;
+$info:       #ebebeb;
+$warning:    #ebebeb;
+$danger:     #ebebeb;
+$light:      #d0ffa7;
+$dark:       #0a3314;
+
+@import "~bootstrap/scss/bootstrap";
+@import 'index.module.css';
+
+// Hack to get the header navbar dropdowns looking proper
+[id^="nav-dropdown"] {
+    color: $primary;
+    font-size: large;
+}
+.navbar-nav .show > .nav-link, .navbar-nav .nav-link.active, .nav-link:hover, .nav-link:focus {
+    color: $primary;
+  }
