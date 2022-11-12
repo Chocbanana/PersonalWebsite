@@ -56,7 +56,7 @@ const GatsbyHomePage = () => (
     <Seo title="Home" />
     <div className={styles.textCenter}>
       <StaticImage
-        src="../images/example.png"
+        src="../../images/example.png"
         loading="eager"
         width={64}
         quality={95}

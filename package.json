@@ -21,6 +21,7 @@
     "sass": "^1.55.0"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "prettier": "^2.7.1"
   },
   "keywords": [
@@ -36,7 +37,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/Chocbanana/Chocbanana.github.io"
   },
   "repository": {
     "type": "git",

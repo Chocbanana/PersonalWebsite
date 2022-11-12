@@ -5,12 +5,16 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import {Container, Row, Col} from 'react-bootstrap'
+import {Container, Row, Col, Stack} from 'react-bootstrap'
 import {FaFlickr, FaTwitter, FaLinkedin, FaGithub} from 'react-icons/fa'
+
+import  "./index.scss"
 
 import Header from "./header"
 
 import BgImage from "../images/bgimg.jpg"
+
+
 
 
 const ftLinksProps = { target: "_blank",
@@ -50,16 +54,44 @@ const Layout = ({ children }) => {
         </Container>
       </main>
       <footer>
-        <Container fluid className="bg-dark mt-auto align-items-center position-absolute text-light">
+        <Container fluid
+          className="bg-dark mt-auto align-items-center position-absolute text-light"
+          style={{padding:"7px"}}>
           <Row>
-            <Col style={{fontSize: `0.75rem`}} classname="align-items-end">
+            <Col style={{fontSize: `0.75rem`}} className="align-self-end">
               © {new Date().getFullYear()} &middot; Built with
               {` `}
               <a href="https://www.gatsbyjs.com">Gatsby</a>
             </Col>
-            <Col className="text-end">
-              Find me:
-                &emsp; <FaLinkedin/>
+            <Col className="text-end" sm={4}>
+              <Row className="justify-content-end">
+                <Col className="justify-end">Find me:</Col>
+                <Col className="justify-end">
+                  <Stack gap={1}>
+                    <div>
+                    <FaLinkedin/>
+                  <a {...ftLinksProps} href={data.site.siteMetadata?.linkedIn || "/#"}>  LinkedIn</a>
+                    </div>
+                    <div>
+                    <FaTwitter/>
+                  <a {...ftLinksProps} href={data.site.siteMetadata?.twitter || "/#"}>  Twitter</a>
+                    </div>
+                  </Stack>
+                </Col>
+                <Col className="justify-end">
+                  <Stack gap={1}>
+                    <div>
+                    <FaFlickr/>
+                <a {...ftLinksProps} href={data.site.siteMetadata?.flickr || "/#"}>  Flickr</a>
+                    </div>
+                    <div>
+                    <FaGithub/>
+                <a {...ftLinksProps} href={data.site.siteMetadata?.github || "/#"}>  Github</a>
+                    </div>
+                  </Stack>
+                </Col>
+              </Row>
+                {/* &emsp; <FaLinkedin/>
                 <a {...ftLinksProps} href={data.site.siteMetadata?.linkedIn || "/#"}>  LinkedIn</a>
                 &emsp; <FaTwitter/>
                 <a {...ftLinksProps} href={data.site.siteMetadata?.twitter || "/#"}>  Twitter</a>
@@ -67,7 +99,7 @@ const Layout = ({ children }) => {
                 <a {...ftLinksProps} href={data.site.siteMetadata?.flickr || "/#"}>  Flickr</a>
                 &emsp; <FaGithub/>
                 <a {...ftLinksProps} href={data.site.siteMetadata?.github || "/#"}>  Github</a>
-                &emsp;
+                &emsp; */}
             </Col>
           </Row>
         </Container>

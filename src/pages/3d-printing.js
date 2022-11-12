@@ -12,7 +12,7 @@ const Printing = () => (
       <p>This site is still <i>under construction </i> {";)"}</p>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
-  )
+)
 
 export const Head = () => <Seo title="3D Printing" />
 

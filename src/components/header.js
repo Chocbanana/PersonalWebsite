@@ -30,7 +30,7 @@ const Header = ({ siteTitle }) => (
   >
     <Navbar bg="dark" expand="sm" style={{borderBottom: "solid var(--bs-light)"}}>
       <Container align="center" className="text-align-center">
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/" className="text-primary">
           <StaticImage
             src="../images/triquetra.png"
             loading="eager"
@@ -41,15 +41,15 @@ const Header = ({ siteTitle }) => (
             style={{ marginBottom: `var(--space-3)` }}
           />
           &nbsp;
-          <Link
+          {/* <Link
             to="/"
             style={{
               fontSize: `var(--font-lg)`,
               textDecoration: `none`,
             }}
-          >
+          > */}
             {siteTitle}
-          </Link>
+          {/* </Link> */}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-primary"/>
         <Navbar.Collapse id="basic-navbar-nav">
