@@ -1,16 +1,58 @@
+import TstImg from "../images/example.png"
+
 
 const pageLinks = {
-  printing: {title: "3D Printing",
+  printing: {
+    title: "3D Printing",
     url: "/3d-printing",
-    description: "My 3D printed projects I designed"
+    description: "My 3D printed projects I designed",
+    image: TstImg
   },
+  octohat: {
+    title: "LED Octopus Hat",
+    url: "/led-projects/octopus-hat",
+    folder: "LED Projects",
+    description: "A lightup octopus hat I coded, 3D model designed, printed, and made!"
+  },
+  ledgloves: {
+    title: "LED Panel Gloves",
+    url: "/led-projects/led-gloves",
+    folder: "LED Projects",
+    description: "LED panel dance gloves with customizable pattens, images, or text"
+  },
+  art: {
+    title: "Art",
+    url: "/art",
+    description: "Digital, traditional, charcoal, ceramic, crafting",
+  },
+  website: {
+    title: "This Website",
+    url: "/programming/website",
+    folder: "Programming",
+    description: "The code for this website, written in the Gatsby framework",
+  },
+  gent: {
+    title: "GENT Library",
+    url: "/programming/gent",
+    folder: "Programming",
+    description: "A library for the easy construction and training of neural networks",
+  },
+  papers: {
+    title: "Papers",
+    url: "/papers",
+    description: "Papers I've authored or co-authored",
+  },
+  contact: {
+    title: "Contact Me",
+    url: "/contact",
+    description: "If you'd like to reach out",
+  },
+
   gatsby2: {
     title: "Page 2",
     folder: "Gatsby",
     url: "/gatsby/page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
+    description: "A simple example of linking to another page within a Gatsby site",
   },
   gatsbytsx: { title: "TypeScript",
     url: "/gatsby/using-typescript",

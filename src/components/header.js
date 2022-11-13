@@ -18,17 +18,8 @@ Object.values(pageLinks).forEach((l) =>
 
 
 const Header = ({ siteTitle }) => (
-  <header
-    // style={{
-    //   margin: `0 auto`,
-    //   padding: `var(--space-4) var(--size-gutter)`,
-    //   display: `flex`,
-    //   alignItems: `center`,
-    //   justifyContent: `space-between`,
-
-    // }}
-  >
-    <Navbar bg="dark" expand="sm" style={{borderBottom: "solid var(--bs-light)"}}>
+  <header>
+    <Navbar bg="dark" expand="lg" style={{borderBottom: "solid var(--bs-light)"}}>
       <Container align="center" className="text-align-center">
         <Navbar.Brand href="/" className="text-primary">
           <StaticImage

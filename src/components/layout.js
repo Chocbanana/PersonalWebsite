@@ -44,9 +44,9 @@ const Layout = ({ children }) => {
       <main>
         {/* Parallax scrolling background */}
         <Container fluid className="bg-secondary" style={{
-          minHeight: "90vh", 
+          minHeight: "90vh",
           width: "100%",
-          backgroundImage: `url(${BgImage})`, 
+          backgroundImage: `url(${BgImage})`,
           backgroundRepeat: "no-repeat",
           overflow: "hidden",
           position: "relative",
@@ -57,10 +57,15 @@ const Layout = ({ children }) => {
           backgroundPosition: "top center",
           }}>
           <Row className="justify-content-md-center">
-            <Col md="auto"
-              className="bg-secondary"
+            <Col md="auto" lg={10}
+              // className="bg-secondary"
               // Fuzzy main content box
-              style={{boxShadow: "0px 0px 30px 40px var(--bs-secondary)", marginTop: "50px"}}
+              style={{
+                boxShadow: "0px 0px 30px 30px var(--bs-secondary)",
+                marginTop: "100px",
+                marginBottom: "100px",
+                backgroundColor: "rgba(var(--bs-secondary-rgb), 0.97)"
+              }}
               >
               {children}
             </Col>
@@ -97,6 +102,7 @@ const Layout = ({ children }) => {
                 </Col>
               </Row>
             </Col>
+            <Col></Col>
             <Col style={{fontSize: `0.75rem`}} className="align-self-end">
               © {new Date().getFullYear()} &middot; Built with
               {` `}

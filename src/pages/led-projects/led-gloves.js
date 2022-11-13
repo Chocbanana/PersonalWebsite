@@ -1,11 +1,11 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import pageLinks from "../data/site-pages"
+import Layout from "../../components/layout"
+import Seo from "../../components/seo"
+import pageLinks from "../../data/site-pages"
 
-const page = pageLinks["printing"]
+const page = pageLinks["ledgloves"]
 
 const SitePage = () => (
     <Layout>
