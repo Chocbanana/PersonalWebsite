@@ -1,52 +1,55 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# My Website
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+A webite built with bare-bones Gatsby and bootstrap! This is meant to be a basic website to show off my content in various forms, but is easily customizable to fit different content and to feature various pages in the homepage.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+There are some key areas to modify, in order to customize the website and for functionality:
 
-## 🚀 Quick start
+- **Navbar and site descriptions:** The most important file is `src/data/site-pages.js`. Each entry must have a unique key (obviously), and is used to build out the navbar. The info is also used by individual pages to auto-fill-out the pages, and the homepage featured page thumbnails. Following info is per entry:
+  - **title:** Required. The SEO title of the page
+  - **url:** Required. Actual path, is exactly the same as the `pages/` folder layout.
+  - **description:** Required. Used to generally describe the page.
+  - **folder:** Optional. If set, the folder in which the dropdown menu the site goes in.
+  - **image:** If set, the image used in the homepage thumbail
 
-1.  **Create a Gatsby site.**
+- **Images:** In the `src/images` folder (duh), change them in order to change profile pic, background, etc
 
-    Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/part-0/#gatsby-cli)) to create a new site, specifying the default starter.
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+- **Styling:** Most styling is done inline within the React components themselves, using Boostrap; however, the Bootstrap main color themes (along with other colors) are set in `src/components/index.scss`, the main and only sass file controlling everything. Modify the vars in there for color modification.
+- **Site details:** In the Gatsby standard `gatsby-config.js`, for now just contains the social media links
+- **Page creation:** Standard Gastby layout, uses the titles of the pages in `src/pages` as the site urls along with any folders.
 
-1.  **Start developing.**
+
+## 🚀 Quick start, running, deploying
+
+1. **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd my-default-starter/
-    gatsby develop
+    cd PersonalWebsite
+    npx gatsby develop
+    ```
+    This will serve a local dev version of the site to view.
+
+1.  **Build**
+
+    I run build seperately from deployment because there are in fact some differences from the dev site and the fully built one, and have found some changes when I don't run `npm run clean`.
+    ```shell
+    npm run clean
+    npm run build
+    npm run serve
+    ```
+1.  **Deploy**
+
+    The code is served using Github Pages, on the repo [Chocbanana.github.io](https://github.com/Chocbanana/Chocbanana.github.io). Deployment is setup to use that.
+    ```shell
+    npm run deploy
     ```
 
-1.  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:8000`!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby Tutorial](https://www.gatsbyjs.com/docs/tutorial/part-4/#use-graphiql-to-explore-the-data-layer-and-write-graphql-queries)._
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-default)
-
-## 🧐 What's inside?
+## The standard Gatsby file structure
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.
 
@@ -88,18 +91,4 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about your project.
 
-## 🎓 Learning Gatsby
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/products/cloud/)
-
-Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
-
-<!-- AUTO-GENERATED-CONTENT:END -->

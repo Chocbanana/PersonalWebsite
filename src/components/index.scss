@@ -11,7 +11,6 @@ $light:      #d0ffa7;
 $dark:       #0a3314;
 
 @import "~bootstrap/scss/bootstrap";
-@import 'index.module.css';
 
 // Hack to get the header navbar dropdowns looking proper
 [id^="nav-dropdown"] {

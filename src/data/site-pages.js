@@ -1,4 +1,6 @@
-import TstImg from "../images/example.png"
+import TstImg from "../images/pagethumbs/example.png"
+
+import imgGithub from "../images/pagethumbs/github.png"
 
 
 const pageLinks = {
@@ -29,12 +31,14 @@ const pageLinks = {
     title: "This Website",
     url: "/programming/website",
     folder: "Programming",
+    image: imgGithub,
     description: "The code for this website, written in the Gatsby framework",
   },
   gent: {
     title: "GENT Library",
     url: "/programming/gent",
     folder: "Programming",
+    image: imgGithub,
     description: "A library for the easy construction and training of neural networks",
   },
   papers: {
@@ -48,24 +52,24 @@ const pageLinks = {
     description: "If you'd like to reach out",
   },
 
-  gatsby2: {
-    title: "Page 2",
-    folder: "Gatsby",
-    url: "/gatsby/page-2",
-    description: "A simple example of linking to another page within a Gatsby site",
-  },
-  gatsbytsx: { title: "TypeScript",
-    url: "/gatsby/using-typescript",
-    folder: "Gatsby",
-  },
-  gatsbyssr: { title: "Server Side Rendering",
-    url: "/gatsby/using-ssr",
-    folder: "Gatsby",
-  },
-  gatsbydsg: { title: "Deferred Static Generation",
-    url: "/gatsby/using-dsg",
-    folder: "Gatsby",
-  },
+  // gatsby2: {
+  //   title: "Page 2",
+  //   folder: "Gatsby",
+  //   url: "/gatsby/page-2",
+  //   description: "A simple example of linking to another page within a Gatsby site",
+  // },
+  // gatsbytsx: { title: "TypeScript",
+  //   url: "/gatsby/using-typescript",
+  //   folder: "Gatsby",
+  // },
+  // gatsbyssr: { title: "Server Side Rendering",
+  //   url: "/gatsby/using-ssr",
+  //   folder: "Gatsby",
+  // },
+  // gatsbydsg: { title: "Deferred Static Generation",
+  //   url: "/gatsby/using-dsg",
+  //   folder: "Gatsby",
+  // },
 }
 
 export default pageLinks
