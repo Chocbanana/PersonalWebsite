@@ -5,22 +5,31 @@ import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import pageLinks from "../../data/site-pages"
 
-// import RNUrlPreview from 'react-native-url-preview';
+import ExternalLink from "../../components/external-links"
+
 
 const page = pageLinks["gent"]
 
-//     "https://github.com/Chocbanana/Gent"
-
-
 
 const SitePage = () => (
-    <Layout>
-      <h1 style={{textAlign:"center"}}>{page.title}</h1>
-      <h5>{page.description}</h5>
-      {/* <RNUrlPreview text={"any text to be parsed , https://www.youtube.com/watch?v=Kmiw4FYTg2U"}/> */}
+  <Layout>
+    <h1 style={{textAlign:"center"}}>{page.title}</h1>
+    <h5>{page.description}</h5>
 
-      <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>
-    </Layout>
+    <ExternalLink
+      href="https://github.com/Chocbanana/Gent"
+      text="Link to the GENT Github repo"
+    />
+    <p>
+      A library for the easy construction, training, and running of artifical neural networks, with the ability to serialize and load arbitrary network architecture definitions and pre-trained weights. Built on top of pytorch.
+
+      This is very much a work in progress and is being used for currently active research; expect the interface to change drastically!
+
+      Eventually, this library will be "An algorithm for Genetic Evolution of Network Topologies".
+    </p>
+
+    <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>
+  </Layout>
 )
 
 export const Head = () => <Seo title={page.title} />

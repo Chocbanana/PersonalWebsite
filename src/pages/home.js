@@ -59,8 +59,9 @@ const HomePage = () => (
               quality={100}
               formats={["auto", "webp", "avif"]}
               alt="My face"
-              imgStyle={{border: "3px solid var(--bs-info)", boxShadow: "black"}}
-              style={{margin: "10px"}}
+              imgStyle={{border: "3px solid var(--bs-info)",
+                }}
+              style={{margin: "10px", boxShadow: "5px 5px 10px 3px black"}}
             />
           </Col>
           <Col>

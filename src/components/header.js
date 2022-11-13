@@ -32,17 +32,11 @@ const Header = ({ siteTitle }) => (
             style={{ marginBottom: `var(--space-3)` }}
           />
           &nbsp;
-          {/* <Link
-            to="/"
-            style={{
-              fontSize: `var(--font-lg)`,
-              textDecoration: `none`,
-            }}
-          > */}
-            {siteTitle}
-          {/* </Link> */}
+          {siteTitle}
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-primary"/>
+
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             {Object.keys(headerLinks).map((k) => (
