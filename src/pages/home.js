@@ -61,7 +61,7 @@ const HomePage = () => (
               alt="My face"
               imgStyle={{border: "3px solid var(--bs-info)",
                 }}
-              style={{margin: "10px", boxShadow: "5px 5px 10px 3px black"}}
+              style={{margin: "10px", boxShadow: "5px 5px 10px 2px var(--bs-info)"}}
             />
           </Col>
           <Col>

@@ -11,7 +11,7 @@ const FlickrAlbum = ({href, imgSrc, title, width, height }) => (
         href={href}
         title={title}
       >
-        <img src={imgSrc} width={width} height={height} alt={title}/>
+        <img src={imgSrc} width={width} height={height} alt={title} style={{minWidth: "200px"}}/>
       </a>
       <Helmet>
         <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8">

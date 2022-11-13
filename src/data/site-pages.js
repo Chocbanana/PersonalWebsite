@@ -1,6 +1,6 @@
 import TstImg from "../images/pagethumbs/example.png"
-
 import imgGithub from "../images/pagethumbs/github.png"
+import artThumb from "../images/pagethumbs/artthumb.jpg"
 
 
 const pageLinks = {
@@ -25,6 +25,7 @@ const pageLinks = {
   art: {
     title: "Art",
     url: "/art",
+    image: artThumb,
     description: "Digital, traditional, charcoal, ceramic, crafting",
   },
   website: {
