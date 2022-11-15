@@ -26,7 +26,7 @@ const ExternalCard = ({url, title, siteName, description, images, favicons }) =>
       : ""}
     <Card.Body>
       <Row>
-        <Col>
+        <Col align="center" className="align-self-center">
           <img src={favicons[0]} alt=""/>
         </Col>
         <Col sm={9}>
