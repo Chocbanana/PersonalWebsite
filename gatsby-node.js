@@ -1,3 +1,41 @@
+const { getLinkPreview } =  require("link-preview-js");
+
+
+const previewLinks = {
+  website: ["https://github.com/Chocbanana/PersonalWebsite",
+    "https://github.com/Chocbanana/Chocbanana.github.io"],
+  gent: ["https://github.com/Chocbanana/Gent"],
+  art: ["https://www.flickr.com/photos/135898386@N03/albums/"],
+  printing: ["https://www.printables.com/social/44101-fractaly/models"]
+}
+
+// Query, server/build side, for data from external website
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+
+  console.log("PAGE DATA", page)
+  for (let p in previewLinks) {
+    if (page.path.includes("/" + p)) {
+
+      console.log("FOUND PAGE", page.path)
+      const linkPreviewData = []
+
+      previewLinks[p].map((l) => {
+        getLinkPreview(l).then((d) => (linkPreviewData.push(d)))
+      })
+
+      deletePage(page)
+      createPage({
+        ...page,
+        context: {
+          ...page.context,
+          linkPreviewData: linkPreviewData,
+        },
+      })
+    }
+  }
+}
+
 // exports.createPages = async ({ graphql, actions }) => {
 //   const { createPage } = actions
 //   createPage({
@@ -23,3 +61,4 @@
 //   const comp =require(page.component)
 //   console.log("****LOOK HERE*****", comp)
 // }
+

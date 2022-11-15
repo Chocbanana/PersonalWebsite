@@ -6,7 +6,7 @@ import printthumb from "../images/pagethumbs/printing.webp"
 const pageLinks = {
   printing: {
     title: "3D Printing",
-    url: "/3d-printing",
+    url: "/printing-3d",
     image: printthumb,
     description: "My 3D printed projects I designed",
   },

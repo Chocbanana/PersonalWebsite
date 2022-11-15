@@ -8,12 +8,11 @@ import pageLinks from "../data/site-pages"
 
 import FlickrAlbum from "../components/flickr-embed"
 import { ExternalCard } from "../components/external-links"
-import { getLinkPreview } from "link-preview-js";
 
 
 const page = pageLinks["art"]
 
-const SitePage = ({ serverData }) => (
+const SitePage = ({ pageContext }) => (
     <Layout>
       <h1 style={{textAlign:"center"}}>{page.title}</h1>
       <h5>{page.description}</h5>
@@ -25,7 +24,7 @@ const SitePage = ({ serverData }) => (
           <p>Check it out! You can also view selected albums below, after clicking on an album you can use your <b>arrow keys</b> or tap the edges of the album to scroll through images.</p>
         </Col>
         <Col>
-          <ExternalCard {...serverData} />
+          <ExternalCard {...pageContext.linkPreviewData[0]} />
         </Col>
       </Row>
 
@@ -77,8 +76,3 @@ const SitePage = ({ serverData }) => (
 export const Head = () => <Seo title={page.title} />
 
 export default SitePage
-
-export async function getServerData() {
-  const response = await getLinkPreview("https://www.flickr.com/photos/135898386@N03/albums/")
-  return { props: await response }
-}

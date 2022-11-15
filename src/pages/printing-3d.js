@@ -6,14 +6,13 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import pageLinks from "../data/site-pages"
-import { getLinkPreview } from "link-preview-js";
 import { ExternalCard } from "../components/external-links"
 
 
 
 const page = pageLinks["printing"]
 
-const SitePage = ({ serverData }) => (
+const SitePage = ({ pageContext }) => (
     <Layout>
       <h1 style={{textAlign:"center"}}>{page.title}</h1>
       <h5>{page.description}</h5>
@@ -24,7 +23,7 @@ const SitePage = ({ serverData }) => (
           <p>All my makes, models, remixes and designs are hosted on Printables.com! You can browse the designs I made on the website, along with select items I've printed and enjoyed. I designed everything using Blender, used PrusaSlicer for slicing the models to print them, and the printer itself I use is a Prusa MK3S {"(a very lovely printer, works so smoothly!)"}</p>
         </Col>
         <Col>
-          <ExternalCard {...serverData} />
+          <ExternalCard {...pageContext.linkPreviewData[0]} />
         </Col>
       </Row>
 
@@ -46,8 +45,3 @@ const SitePage = ({ serverData }) => (
 export const Head = () => <Seo title={page.title} />
 
 export default SitePage
-
-export async function getServerData() {
-  const response = await getLinkPreview("https://www.printables.com/social/44101-fractaly/models")
-  return { props: await response }
-}
