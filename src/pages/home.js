@@ -1,13 +1,94 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { Row, Col } from "react-bootstrap"
+import { Row, Col, Card } from "react-bootstrap"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import pageLinks from "../data/site-pages"
 
+import exImg from "../images/pagethumbs/example.png"
+
+
 const FeaturedCard = ({pageDeets}) => (
+<Card
+  border="green"
+  style={{
+    maxWidth: "300px",
+    minWidth: "200px",
+    position: "relative",
+    backgroundColor: "rgba(var(--bs-light-rgb), 0.3)",
+    margin: "10px"}}>
+  <Card.Img src={("image" in pageDeets) ? pageDeets.image : exImg} alt="Card image" />
+  <Card.ImgOverlay>
+    <Card.Title style={{
+      color: "var(--bs-primary)",
+      fontWeight: "900",
+      fontSize: "xx-large",
+      WebkitTextStroke: "1px black"
+      }}>
+      {pageDeets.title}
+    </Card.Title>
+  </Card.ImgOverlay>
+  <Card.Body>
+    <Card.Text>
+      {pageDeets.description}
+    </Card.Text>
+  </Card.Body>
+  {/* To make the entire card clickable, also need the position=relative above */}
+  <a href={pageDeets.url} className="stretched-link"> </a>
+</Card>
+)
+
+const HomePage = () => (
+    <Layout>
+      <Row>
+        <Col>
+        <h1 className="text-primary">Bhavana</h1>
+        <h1 className="text-primary">Jonnalagadda</h1>
+        <Row>
+          <Col align="center" lg={4}>
+            <StaticImage
+              src="../images/myfacesquare.jpg"
+              loading="eager"
+              width={150}
+              quality={100}
+              formats={["auto", "webp", "avif"]}
+              alt="My face"
+              imgStyle={{border: "3px solid var(--bs-info)",
+                }}
+              style={{margin: "10px", boxShadow: "5px 5px 10px 2px var(--bs-info)"}}
+            />
+          </Col>
+          <Col>
+            <h4 style={{fontWeight: "lighter"}}>
+              Welcome! This is my website for displaying all my projects and public work:
+              3D printing, LED wearables, traditional art, academic
+              papers, AI research, and more!
+            </h4>
+          </Col>
+        </Row>
+        </Col>
+        <Col align="center">
+          <h1 style={{color: "var(--bs-primary)"}}>Featured Work</h1>
+          <Row style={{marginBottom: "20px"}} md className="">
+            <Col><FeaturedCard pageDeets={pageLinks["printing"]}/></Col>
+            <Col><FeaturedCard pageDeets={pageLinks["octohat"]}/></Col>
+            <Col><FeaturedCard pageDeets={pageLinks["gent"]}/></Col>
+            <Col><FeaturedCard pageDeets={pageLinks["papers"]}/></Col>
+            <Col><FeaturedCard pageDeets={pageLinks["art"]}/></Col>
+            <Col><FeaturedCard pageDeets={pageLinks["ledgloves"]}/></Col>
+          </Row>
+        </Col>
+      </Row>
+
+    </Layout>
+  )
+
+export const Head = () => <Seo title="Home" />
+
+
+const FeaturedCardOld = ({pageDeets}) => (
   <div className="link" style={{
     border: "1px solid var(--bs-info)",
     borderRadius: "5px",
@@ -43,56 +124,5 @@ const FeaturedCard = ({pageDeets}) => (
   </div>
 )
 
-
-const HomePage = () => (
-    <Layout>
-      <Row>
-        <Col>
-        <h1 className="text-primary">Bhavana</h1>
-        <h1 className="text-primary">Jonnalagadda</h1>
-        <Row>
-          <Col align="center" lg={4}>
-            <StaticImage
-              src="../images/myfacesquare.jpg"
-              loading="eager"
-              width={150}
-              quality={100}
-              formats={["auto", "webp", "avif"]}
-              alt="My face"
-              imgStyle={{border: "3px solid var(--bs-info)",
-                }}
-              style={{margin: "10px", boxShadow: "5px 5px 10px 2px var(--bs-info)"}}
-            />
-          </Col>
-          <Col>
-            <h5>
-              Welcome! This is my website for displaying all my projects and public work:
-              3D printing, LED wearables, traditional art, academic
-              papers, AI research, and more!
-            </h5>
-          </Col>
-        </Row>
-        </Col>
-        <Col align="center">
-          <h1 style={{color: "var(--bs-primary)"}}>Featured Work</h1>
-          <Row style={{marginBottom: "20px"}} md={12}>
-            <Col><FeaturedCard pageDeets={pageLinks["printing"]}/></Col>
-            <Col><FeaturedCard pageDeets={pageLinks["octohat"]}/></Col>
-          </Row>
-          <Row style={{marginBottom: "20px"}}>
-            <Col><FeaturedCard pageDeets={pageLinks["gent"]}/></Col>
-            <Col><FeaturedCard pageDeets={pageLinks["papers"]}/></Col>
-          </Row>
-          <Row>
-            <Col><FeaturedCard pageDeets={pageLinks["art"]}/></Col>
-            <Col><FeaturedCard pageDeets={pageLinks["ledgloves"]}/></Col>
-          </Row>
-        </Col>
-      </Row>
-
-    </Layout>
-  )
-
-export const Head = () => <Seo title="Home" />
 
 export default HomePage

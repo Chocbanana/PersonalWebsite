@@ -1,14 +1,14 @@
-import TstImg from "../images/pagethumbs/example.png"
 import imgGithub from "../images/pagethumbs/github.png"
 import artThumb from "../images/pagethumbs/artthumb.jpg"
+import printthumb from "../images/pagethumbs/printing.webp"
 
 
 const pageLinks = {
   printing: {
     title: "3D Printing",
     url: "/3d-printing",
+    image: printthumb,
     description: "My 3D printed projects I designed",
-    image: TstImg
   },
   octohat: {
     title: "LED Octopus Hat",
