@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { Row, Col, Card } from "react-bootstrap"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -88,41 +87,41 @@ const HomePage = () => (
 export const Head = () => <Seo title="Home" />
 
 
-const FeaturedCardOld = ({pageDeets}) => (
-  <div className="link" style={{
-    border: "1px solid var(--bs-info)",
-    borderRadius: "5px",
-    maxWidth: "300px",
-    minWidth: "200px",
-    position: "relative",
-    padding: "15px",
-    margin: "20px",
-    backgroundColor: "rgba(var(--bs-light-rgb), 0.3)"}}>
-    {/* To make the entire card clickable, also need the position=relative above */}
-    <Link to={pageDeets.url}><span style={{
-      position: "absolute",
-      width: "100%",
-      height: "100%",
-      top: 0,
-      left: 0,
-      zIndex: 1,
-    }}></span></Link>
-    <h4 align="center">{pageDeets.title}</h4>
-    {("image" in pageDeets) ?
-    <div style={{textAlign: "center"}}>
-    <img
-      src={pageDeets.image}
-      loading="eager"
-      width="90%"
-      height="90%"
-      alt=""
-      style={{marginBottom: "15px", objectFit: "cover"}}
-    />
-    </div>
-    : ""}
-    <p>{pageDeets.description}</p>
-  </div>
-)
+// const FeaturedCardOld = ({pageDeets}) => (
+//   <div className="link" style={{
+//     border: "1px solid var(--bs-info)",
+//     borderRadius: "5px",
+//     maxWidth: "300px",
+//     minWidth: "200px",
+//     position: "relative",
+//     padding: "15px",
+//     margin: "20px",
+//     backgroundColor: "rgba(var(--bs-light-rgb), 0.3)"}}>
+//     {/* To make the entire card clickable, also need the position=relative above */}
+//     <Link to={pageDeets.url}><span style={{
+//       position: "absolute",
+//       width: "100%",
+//       height: "100%",
+//       top: 0,
+//       left: 0,
+//       zIndex: 1,
+//     }}></span></Link>
+//     <h4 align="center">{pageDeets.title}</h4>
+//     {("image" in pageDeets) ?
+//     <div style={{textAlign: "center"}}>
+//     <img
+//       src={pageDeets.image}
+//       loading="eager"
+//       width="90%"
+//       height="90%"
+//       alt=""
+//       style={{marginBottom: "15px", objectFit: "cover"}}
+//     />
+//     </div>
+//     : ""}
+//     <p>{pageDeets.description}</p>
+//   </div>
+// )
 
 
 export default HomePage

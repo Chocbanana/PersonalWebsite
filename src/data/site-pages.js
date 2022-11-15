@@ -50,7 +50,7 @@ const pageLinks = {
   contact: {
     title: "Contact Me",
     url: "/contact",
-    description: "If you'd like to reach out",
+    description: "If you'd like to reach out! ;)",
   },
 
   // gatsby2: {

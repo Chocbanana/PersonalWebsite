@@ -40,7 +40,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/Chocbanana/Chocbanana.github.io"
+    "deploy": "gatsby build && gh-pages -f -d public -b master -r https://github.com/Chocbanana/Chocbanana.github.io"
   },
   "repository": {
     "type": "git",

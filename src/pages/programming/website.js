@@ -16,7 +16,7 @@ const SitePage = ({ pageContext }) => (
 
     <Row className="justify-content-center"
       style={{marginTop: "2rem", marginBottom: "2rem"}}>
-      <Col md="auto">
+      <Col md="auto" style={{marginBottom: "15px"}}>
         <ExternalCard {...pageContext.linkPreviewData[0]}/>
       </Col>
       <Col md="auto">
