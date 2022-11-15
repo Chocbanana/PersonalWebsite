@@ -9,17 +9,14 @@ const previewLinks = {
   printing: ["https://www.printables.com/social/44101-fractaly/models"]
 }
 
-// Query, server/build side, for data from external website
+// Query, server/build build time, for data from external website for link previews
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
 
-  console.log("PAGE DATA", page)
   for (let p in previewLinks) {
     if (page.path.includes("/" + p)) {
 
-      console.log("FOUND PAGE", page.path)
       const linkPreviewData = []
-
       previewLinks[p].map((l) => {
         getLinkPreview(l).then((d) => (linkPreviewData.push(d)))
       })

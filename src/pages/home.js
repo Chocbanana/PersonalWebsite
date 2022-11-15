@@ -21,10 +21,11 @@ const FeaturedCard = ({pageDeets}) => (
   <Card.Img src={("image" in pageDeets) ? pageDeets.image : exImg} alt="Card image" />
   <Card.ImgOverlay>
     <Card.Title style={{
-      color: "var(--bs-primary)",
-      fontWeight: "900",
+      color: "var(--bs-secondary)",
+      fontWeight: "bolder",
       fontSize: "xx-large",
-      WebkitTextStroke: "1px black"
+      textShadow: "1px 1px 3px black, 1px -1px 3px black, -1px 1px 3px black, -1px -1px 3px black"
+      // WebkitTextStroke: "1px black"
       }}>
       {pageDeets.title}
     </Card.Title>

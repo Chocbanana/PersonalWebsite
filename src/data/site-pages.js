@@ -1,6 +1,7 @@
 import imgGithub from "../images/pagethumbs/github.png"
 import artThumb from "../images/pagethumbs/artthumb.jpg"
 import printthumb from "../images/pagethumbs/printing.webp"
+import paperthumb from "../images/pagethumbs/papers.png"
 
 
 const pageLinks = {
@@ -45,6 +46,7 @@ const pageLinks = {
   papers: {
     title: "Papers",
     url: "/papers",
+    image: paperthumb,
     description: "Papers I've authored or co-authored",
   },
   contact: {

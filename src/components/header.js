@@ -12,9 +12,9 @@ const headerLinksStyle = { textDecoration:"None", fontSize: `1.2rem` }
 Object.values(pageLinks).forEach((l) =>
   ("folder" in l) ?
     !(l.folder in headerLinks) ?
-      headerLinks[l.folder] = [<Link to={l.url} style={headerLinksStyle}>{l.title}</Link>]
-      : headerLinks[l.folder].push(<Link to={l.url} style={headerLinksStyle}>{l.title}</Link>)
-    : headerLinks[l.title] = <Link to={l.url} style={headerLinksStyle}>{l.title}</Link>);
+      headerLinks[l.folder] = [<Link to={l.url} key={l.url} style={headerLinksStyle}>{l.title}</Link>]
+      : headerLinks[l.folder].push(<Link to={l.url} key={l.url} style={headerLinksStyle}>{l.title}</Link>)
+    : headerLinks[l.title] = <Link to={l.url} key={l.url} style={headerLinksStyle}>{l.title}</Link>);
 
 
 const Header = ({ siteTitle }) => (
@@ -41,7 +41,7 @@ const Header = ({ siteTitle }) => (
             {Object.keys(headerLinks).map((k) => (
               Array.isArray(headerLinks[k]) ?
                 <NavDropdown menuVariant="dark" title={k} id={"nav-dropdown"+k}>
-                  {headerLinks[k].map((l) => <NavDropdown.Item >{l}</NavDropdown.Item>)}
+                  {headerLinks[k].map((l) => <NavDropdown.Item eventKey={k+toString(l)}>{l}</NavDropdown.Item>)}
                 </NavDropdown>
                 : <Nav.Link eventKey={k}>{headerLinks[k]}</Nav.Link>
             ))}
