@@ -26,7 +26,7 @@ const SitePage = () => {
         construct an ANN to represent a biological circuit in the mouse visual system.
       </p>
 
-      <iframe title="thesis" src="http://docs.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1SeGrkOLZq3bLLyp_tlT18FL2ny6hf2-J&hl=en&embedded=true" style={{width:"100%", height:"800px"}} frameborder="0"></iframe>
+      <iframe title="thesis" src="https://docs.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1SeGrkOLZq3bLLyp_tlT18FL2ny6hf2-J&hl=en&embedded=true" style={{width:"100%", height:"800px"}} frameborder="0"></iframe>
 
       <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>
     </Layout>
