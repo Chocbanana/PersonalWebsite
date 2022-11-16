@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import pageLinks from "../data/site-pages"
 
-import FlickrAlbum from "../components/flickr-embed"
+import { FlickrAlbum } from "../components/flickr-embed"
 import { ExternalCard } from "../components/external-links"
 
 

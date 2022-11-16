@@ -58,7 +58,6 @@ const Layout = ({ children }) => {
           }}>
           <Row className="justify-content-md-center">
             <Col md="auto" lg={10}
-              // className="bg-secondary"
               // Fuzzy main content box
               style={{
                 boxShadow: "0px 0px 30px 30px var(--bs-secondary)",

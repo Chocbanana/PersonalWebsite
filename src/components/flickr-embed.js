@@ -34,4 +34,5 @@ FlickrAlbum.propTypes = {
     title: ""
 }
 
-export default FlickrAlbum
+
+export {FlickrAlbum}
