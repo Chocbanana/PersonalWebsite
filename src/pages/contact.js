@@ -10,11 +10,17 @@ import pageLinks from "../data/site-pages"
 
 const page = pageLinks["contact"]
 
-const socialLinksProps = {
-  target: "_blank",
-  rel: "noreferrer",
-  style: {textDecoration: "none"}
-};
+const SocialItem = ({href, Icon, title, children}) => (
+  <ListGroup.Item as="a"
+    target= "_blank"
+    rel= "noreferrer"
+    style={{textDecoration: "none"}}
+    href={href || "/#"}
+    >
+    <div className="fw-bold"><Icon/> {title}</div>
+    {children}
+  </ListGroup.Item>
+)
 
 const SitePage = () => {
 
@@ -38,26 +44,26 @@ const SitePage = () => {
       <h5 style={{textAlign:"center"}}>{page.description}</h5>
 
       <p style={{textAlign:"center"}}>You can find me on the following sites:</p>
+
       <ListGroup horizontal="md" className="justify-content-center text-center">
-        <ListGroup.Item as="a" {...socialLinksProps} href={data.site.siteMetadata?.linkedIn || "/#"}>
-          <FaLinkedin/> LinkedIn
-        </ListGroup.Item>
-        <ListGroup.Item as="a" {...socialLinksProps} href={data.site.siteMetadata?.flickr || "/#"}>
-          <FaFlickr/> Flickr
-        </ListGroup.Item>
-        <ListGroup.Item as="a" {...socialLinksProps} href="https://www.printables.com/social/44101-fractaly/models">
-          <RiPrinterCloudFill/> 3D Printables
-        </ListGroup.Item>
-        <ListGroup.Item as="a" {...socialLinksProps} href={data.site.siteMetadata?.github || "/#"}>
-          <FaGithub/> Github
-        </ListGroup.Item>
-        <ListGroup.Item as="a" {...socialLinksProps} href={data.site.siteMetadata?.twitter || "/#"}>
-          <FaTwitter/> Twitter
-        </ListGroup.Item>
+        <SocialItem href={data.site.siteMetadata?.linkedIn} Icon={FaLinkedin} title="LinkedIn">
+          My resume and all my professional doings. Please don't message me on here, too much recruiter spam
+        </SocialItem>
+        <SocialItem href={data.site.siteMetadata?.flickr} Icon={FaFlickr} title="Flickr">
+          All my artwork, along with pictures of my LED projects, in full glorious high-res
+        </SocialItem>
+        <SocialItem href="https://www.printables.com/social/44101-fractaly/models" Icon={RiPrinterCloudFill} title="3D Printables">
+          Where all my 3d designs and prints are hosted, and you can view and download for free!
+        </SocialItem>
+        <SocialItem href={data.site.siteMetadata?.github} Icon={FaGithub} title="Github">
+          My public programming projects. Don't contact here, I probably won't check
+        </SocialItem>
+        <SocialItem href={data.site.siteMetadata?.twitter} Icon={FaTwitter} title="Twitter">
+          My twitter; don't DM me here, I barely check it.
+        </SocialItem>
       </ListGroup>
+
       <p style={{textAlign:"center"}}>But if you'd like to contact me directly you can do so below!</p>
-
-
 
       <Row className="justify-content-md-center" lg>
         <Form action="https://getform.io/f/61a2cab5-6892-4100-93ea-49fb3d6f817f"
