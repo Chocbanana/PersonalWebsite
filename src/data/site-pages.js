@@ -2,6 +2,7 @@ import imgGithub from "../images/pagethumbs/github.png"
 import artThumb from "../images/pagethumbs/artthumb.jpg"
 import printthumb from "../images/pagethumbs/printing.webp"
 import paperthumb from "../images/pagethumbs/papers.png"
+import octothumb from "../images/pagethumbs/octothumb.jpg"
 
 
 const pageLinks = {
@@ -15,6 +16,7 @@ const pageLinks = {
     title: "LED Octopus Hat",
     url: "/led-projects/octopus-hat",
     folder: "LED Projects",
+    image: octothumb,
     description: "A lightup octopus hat I coded, 3D model designed, printed, and made!"
   },
   ledgloves: {

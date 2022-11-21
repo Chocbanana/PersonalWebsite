@@ -33,6 +33,35 @@ exports.onCreatePage = ({ page, actions }) => {
   }
 }
 
+
+// Allow loading of raw .ino/.cpp/.h files as text
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.ino/,
+          type: 'asset/source',
+        },
+        {
+          test: /\.cpp/,
+          type: 'asset/source',
+        },
+        {
+          test: /\.h/,
+          type: 'asset/source',
+        }
+      ],
+    },
+  })
+}
+
 // exports.createPages = async ({ graphql, actions }) => {
 //   const { createPage } = actions
 //   createPage({
