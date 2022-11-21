@@ -60,10 +60,10 @@ const Layout = ({ children }) => {
             <Col md="auto" lg={10}
               // Fuzzy main content box
               style={{
-                boxShadow: "0px 0px 30px 30px var(--bs-secondary)",
+                boxShadow: "0px 0px 35px 30px var(--bs-secondary)",
                 marginTop: "100px",
                 marginBottom: "100px",
-                backgroundColor: "rgba(var(--bs-secondary-rgb), 0.97)"
+                backgroundColor: "rgba(var(--bs-secondary-rgb), 0.95)"
               }}
               >
               {children}
