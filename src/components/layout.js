@@ -4,15 +4,17 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import {Container, Row, Col, Stack} from 'react-bootstrap'
 import {FaFlickr, FaTwitter, FaLinkedin, FaGithub} from 'react-icons/fa'
 
 import  "./index.scss"
 
 import Header from "./header"
+import TableOfContents from "./toc"
 
 import BgImage from "../images/bgimg.png"
+
 
 
 
@@ -21,6 +23,29 @@ const ftLinksProps = { target: "_blank",
   rel: "noreferrer",
   style: {textDecoration: "none"}
 };
+
+
+
+const LayoutWithToc = ({ children, page }) => (
+  <Layout>
+    <h1 style={{textAlign:"center"}}>{page.title}</h1>
+    <h5 style={{fontWeight: "lighter"}}>{page.description}</h5>
+
+    <Row>
+      <Col>
+        <TableOfContents/>
+      </Col>
+
+      <Col lg={9} md={11}>
+        {children}
+      </Col>
+    </Row>
+
+    <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>
+
+  </Layout>
+)
+
 
 
 const Layout = ({ children }) => {
@@ -118,4 +143,5 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
+export { LayoutWithToc }
 export default Layout

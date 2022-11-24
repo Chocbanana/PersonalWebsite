@@ -12,12 +12,12 @@ import exImg from "../images/pagethumbs/example.png"
 const FeaturedCard = ({pageDeets}) => (
 <Card
   border="green"
+  className="my-3"
   style={{
     maxWidth: "300px",
     // minWidth: "200px",
     position: "relative",
-    backgroundColor: "rgba(var(--bs-light-rgb), 0.3)",
-    marginBottom: "10px"
+    backgroundColor: "rgba(var(--bs-light-rgb), 0.35)",
     }}>
   <Card.Img src={("image" in pageDeets) ? pageDeets.image : exImg} alt="Card image" />
   <Card.ImgOverlay>
