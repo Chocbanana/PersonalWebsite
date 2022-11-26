@@ -45,7 +45,7 @@ const SitePage = () => {
 
       <p style={{textAlign:"center"}}>You can find me on the following sites:</p>
 
-      <ListGroup horizontal="md" className="justify-content-center text-center">
+      <ListGroup horizontal="md" className="justify-content-center text-center my-2">
         <SocialItem href={data.site.siteMetadata?.linkedIn} Icon={FaLinkedin} title="LinkedIn">
           My resume and all my professional doings. Please don't message me on here, too much recruiter spam
         </SocialItem>
