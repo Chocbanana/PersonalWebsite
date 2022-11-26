@@ -12,12 +12,13 @@ import exImg from "../images/pagethumbs/example.png"
 const FeaturedCard = ({pageDeets}) => (
 <Card
   border="green"
+  className="my-3"
   style={{
     maxWidth: "300px",
-    minWidth: "200px",
+    // minWidth: "200px",
     position: "relative",
-    backgroundColor: "rgba(var(--bs-light-rgb), 0.3)",
-    margin: "10px"}}>
+    backgroundColor: "rgba(var(--bs-light-rgb), 0.35)",
+    }}>
   <Card.Img src={("image" in pageDeets) ? pageDeets.image : exImg} alt="Card image" />
   <Card.ImgOverlay>
     <Card.Title style={{
@@ -42,36 +43,36 @@ const FeaturedCard = ({pageDeets}) => (
 
 const HomePage = () => (
     <Layout>
-      <Row>
+      <Row xs={1} sm={2}>
         <Col>
-        <h1 className="text-primary">Bhavana</h1>
-        <h1 className="text-primary">Jonnalagadda</h1>
-        <Row>
-          <Col align="center" lg={4}>
-            <StaticImage
-              src="../images/myfacesquare.jpg"
-              loading="eager"
-              width={150}
-              quality={100}
-              formats={["auto", "webp", "avif"]}
-              alt="My face"
-              imgStyle={{border: "3px solid var(--bs-info)",
-                }}
-              style={{margin: "10px", boxShadow: "5px 5px 10px 2px var(--bs-info)"}}
-            />
-          </Col>
-          <Col>
-            <h4 style={{fontWeight: "lighter"}}>
-              Welcome! This is my website for displaying all my projects and public work:
-              3D printing, LED wearables, traditional art, academic
-              papers, AI research, and more!
-            </h4>
-          </Col>
-        </Row>
+          <h1 className="text-primary">Bhavana</h1>
+          <h1 className="text-primary">Jonnalagadda</h1>
+          <Row>
+            <Col align="center" lg={4}>
+              <StaticImage
+                src="../images/myfacesquare.jpg"
+                loading="eager"
+                width={150}
+                quality={100}
+                formats={["auto", "webp", "avif"]}
+                alt="My face"
+                imgStyle={{border: "3px solid var(--bs-info)",
+                  }}
+                style={{margin: "10px", boxShadow: "5px 5px 10px 2px var(--bs-info)"}}
+              />
+            </Col>
+            <Col>
+              <h4 style={{fontWeight: "lighter"}}>
+                Welcome! This is my website for displaying all my projects and public work:
+                3D printing, LED wearables, traditional art, academic
+                papers, AI research, and more!
+              </h4>
+            </Col>
+          </Row>
         </Col>
         <Col align="center">
           <h1 style={{color: "var(--bs-primary)"}}>Featured Work</h1>
-          <Row style={{marginBottom: "20px"}} md className="">
+          <Row style={{marginBottom: "20px"}} xs={1} sm={1} xl={2} xxl={3}>
             <Col><FeaturedCard pageDeets={pageLinks["printing"]}/></Col>
             <Col><FeaturedCard pageDeets={pageLinks["octohat"]}/></Col>
             <Col><FeaturedCard pageDeets={pageLinks["gent"]}/></Col>

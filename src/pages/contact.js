@@ -1,6 +1,8 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { Form, Button, Row, Col } from "react-bootstrap"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { Form, Button, Row, Col, ListGroup } from "react-bootstrap"
+import { FaFlickr, FaTwitter, FaLinkedin, FaGithub} from 'react-icons/fa'
+import { RiPrinterCloudFill } from 'react-icons/ri'
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -8,10 +10,60 @@ import pageLinks from "../data/site-pages"
 
 const page = pageLinks["contact"]
 
-const SitePage = () => (
+const SocialItem = ({href, Icon, title, children}) => (
+  <ListGroup.Item as="a"
+    target= "_blank"
+    rel= "noreferrer"
+    style={{textDecoration: "none"}}
+    href={href || "/#"}
+    >
+    <div className="fw-bold"><Icon/> {title}</div>
+    {children}
+  </ListGroup.Item>
+)
+
+const SitePage = () => {
+
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+          linkedIn
+          twitter
+          flickr
+          github
+        }
+      }
+    }
+  `)
+
+  return (
     <Layout>
       <h1 style={{textAlign:"center"}}>{page.title}</h1>
       <h5 style={{textAlign:"center"}}>{page.description}</h5>
+
+      <p style={{textAlign:"center"}}>You can find me on the following sites:</p>
+
+      <ListGroup horizontal="md" className="justify-content-center text-center">
+        <SocialItem href={data.site.siteMetadata?.linkedIn} Icon={FaLinkedin} title="LinkedIn">
+          My resume and all my professional doings. Please don't message me on here, too much recruiter spam
+        </SocialItem>
+        <SocialItem href={data.site.siteMetadata?.flickr} Icon={FaFlickr} title="Flickr">
+          All my artwork, along with pictures of my LED projects, in full glorious high-res
+        </SocialItem>
+        <SocialItem href="https://www.printables.com/social/44101-fractaly/models" Icon={RiPrinterCloudFill} title="3D Printables">
+          Where all my 3d designs and prints are hosted, and you can view and download for free!
+        </SocialItem>
+        <SocialItem href={data.site.siteMetadata?.github} Icon={FaGithub} title="Github">
+          My public programming projects. Don't contact here, I probably won't check
+        </SocialItem>
+        <SocialItem href={data.site.siteMetadata?.twitter} Icon={FaTwitter} title="Twitter">
+          My twitter; don't DM me here, I barely check it.
+        </SocialItem>
+      </ListGroup>
+
+      <p style={{textAlign:"center"}}>But if you'd like to contact me directly you can do so below!</p>
 
       <Row className="justify-content-md-center" lg>
         <Form action="https://getform.io/f/61a2cab5-6892-4100-93ea-49fb3d6f817f"
@@ -72,8 +124,10 @@ const SitePage = () => (
 
       <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>
     </Layout>
-)
+  )
+}
 
-export const Head = () => <Seo title={page.title} />
+
+export const Head = () => <Seo title={page.title} description={page.description} />
 
 export default SitePage

@@ -73,6 +73,6 @@ const SitePage = ({ pageContext }) => (
     </Layout>
 )
 
-export const Head = () => <Seo title={page.title} />
+export const Head = () => <Seo title={page.title} description={page.description} />
 
 export default SitePage
