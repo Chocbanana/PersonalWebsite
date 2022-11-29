@@ -3,6 +3,7 @@ import artThumb from "../images/pagethumbs/artthumb.jpg"
 import printthumb from "../images/pagethumbs/printing.webp"
 import paperthumb from "../images/pagethumbs/papers.png"
 import octothumb from "../images/pagethumbs/octothumb.jpg"
+import glovethumb from "../images/pagethumbs/gloves.jpg"
 
 
 const pageLinks = {
@@ -23,6 +24,7 @@ const pageLinks = {
     title: "LED Panel Gloves",
     url: "/led-projects/led-gloves",
     folder: "LED Projects",
+    image: glovethumb,
     description: "LED panel dance gloves with customizable pattens, images, or text"
   },
   art: {

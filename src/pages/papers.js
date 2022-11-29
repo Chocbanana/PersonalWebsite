@@ -33,6 +33,6 @@ const SitePage = () => {
   )
 }
 
-export const Head = () => <Seo title={page.title} description={page.description} />
+export const Head = () => <Seo {...page} />
 
 export default SitePage

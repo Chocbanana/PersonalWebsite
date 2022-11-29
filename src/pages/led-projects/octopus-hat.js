@@ -1,6 +1,6 @@
 import * as React from "react"
 import { } from "gatsby"
-import { Row, Col, Figure, Tabs, Tab, Card, Alert } from "react-bootstrap"
+import { Row, Col, Figure, Tabs, Tab, Card } from "react-bootstrap"
 import { StaticImage } from "gatsby-plugin-image"
 import { CodeBlock } from "react-code-blocks"
 
@@ -241,10 +241,6 @@ const SitePage = () => (
 
     <h2 className="my-3">Final Assembly and Look!</h2>
 
-    <Alert className="my-3 text-center">
-      Use the arrow keys to click through the Flickr album
-    </Alert>
-
     <FlickrAlbum
       href="https://www.flickr.com/photos/135898386@N03/albums/72177720303677871"
       imgSrc="https://live.staticflickr.com/65535/52499510017_6e4aed7298.jpg"
@@ -267,6 +263,6 @@ const SitePage = () => (
 
 
 
-export const Head = () => <Seo title={page.title} description={page.description} />
+export const Head = () => <Seo {...page} />
 
 export default SitePage

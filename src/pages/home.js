@@ -76,8 +76,8 @@ const HomePage = () => (
             <Col><FeaturedCard pageDeets={pageLinks["printing"]}/></Col>
             <Col><FeaturedCard pageDeets={pageLinks["octohat"]}/></Col>
             <Col><FeaturedCard pageDeets={pageLinks["gent"]}/></Col>
-            <Col><FeaturedCard pageDeets={pageLinks["papers"]}/></Col>
             <Col><FeaturedCard pageDeets={pageLinks["art"]}/></Col>
+            <Col><FeaturedCard pageDeets={pageLinks["papers"]}/></Col>
             <Col><FeaturedCard pageDeets={pageLinks["ledgloves"]}/></Col>
           </Row>
         </Col>

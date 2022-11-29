@@ -6,7 +6,8 @@ const previewLinks = {
     "https://github.com/Chocbanana/Chocbanana.github.io"],
   gent: ["https://github.com/Chocbanana/Gent"],
   art: ["https://www.flickr.com/photos/135898386@N03/albums/"],
-  printing: ["https://www.printables.com/social/44101-fractaly/models"]
+  printing: ["https://www.printables.com/social/44101-fractaly/models"],
+  led: ["https://www.etsy.com/listing/1082658511/paper-thin-led-matrix-diy-tech-component"]
 }
 
 // Query, server/build build time, for data from external website for link previews
@@ -18,7 +19,7 @@ exports.onCreatePage = ({ page, actions }) => {
 
       const linkPreviewData = []
       previewLinks[p].map((l) => {
-        getLinkPreview(l).then((d) => (linkPreviewData.push(d)))
+        getLinkPreview(l, {followRedirects: "follow"}).then((d) => (linkPreviewData.push(d)))
       })
 
       deletePage(page)

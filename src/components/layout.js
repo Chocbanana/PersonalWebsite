@@ -36,7 +36,7 @@ const LayoutWithToc = ({ children, page }) => (
         <TableOfContents/>
       </Col>
 
-      <Col lg={9} md={11}>
+      <Col lg={10} md={11}>
         {children}
       </Col>
     </Row>

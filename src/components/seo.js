@@ -8,8 +8,9 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import defaultImg from "../images/myface.png"
 
-function Seo({ description, title, children }) {
+function Seo({ description, title, image, children }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -17,6 +18,7 @@ function Seo({ description, title, children }) {
           siteMetadata {
             title
             description
+            siteUrl
           }
         }
       }
@@ -33,6 +35,7 @@ function Seo({ description, title, children }) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
+      <meta property="og:image" content={site.siteMetadata?.siteUrl + image} />
       {children}
     </>
   )
@@ -40,6 +43,7 @@ function Seo({ description, title, children }) {
 
 Seo.defaultProps = {
   description: ``,
+  image: defaultImg
 }
 
 Seo.propTypes = {

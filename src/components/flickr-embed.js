@@ -1,23 +1,27 @@
 import * as React from "react"
 import PropTypes from "prop-types"
+import { Alert } from "react-bootstrap"
 
 import { Helmet } from "react-helmet"
 
 const FlickrAlbum = ({href, imgSrc, title, width, height }) => (
-    <div>
-      <a data-flickr-embed="true"
-        data-header="true"
-        data-footer="true"
-        href={href}
-        title={title}
-      >
-        <img src={imgSrc} width={width} height={height} alt={title} style={{minWidth: "200px"}}/>
-      </a>
-      <Helmet>
-        <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8">
-        </script>
-      </Helmet>
-    </div>
+  <div>
+    <Alert className="my-3 text-center">
+      <b>Tap on edge of picture to scroll through album pics</b>
+    </Alert>
+    <a data-flickr-embed="true"
+      data-header="true"
+      data-footer="true"
+      href={href}
+      title={title}
+    >
+      <img src={imgSrc} width={width} height={height} alt={title} style={{minWidth: "200px"}}/>
+    </a>
+    <Helmet>
+      <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8">
+      </script>
+    </Helmet>
+  </div>
 )
 
 FlickrAlbum.propTypes = {
