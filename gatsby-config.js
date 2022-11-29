@@ -3,7 +3,7 @@ module.exports = {
     title: `Bhav's Personal Website`,
     description: `My website for displaying all my projects and public work: 3D printing, LED wearables, traditional art, academic papers, AI research, and more!`,
     twitter: `https://twitter.com/justlurkingcoc1`,
-    siteUrl: `https://chocbanana.github.io/`,
+    siteUrl: `https://chocbanana.github.io`,
     linkedIn: `https://www.linkedin.com/in/bhavanajonn`,
     flickr: `https://www.flickr.com/photos/135898386@N03/albums`,
     github: `https://github.com/Chocbanana`,
