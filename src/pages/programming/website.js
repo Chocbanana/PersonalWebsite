@@ -25,7 +25,7 @@ const SitePage = ({ pageContext }) => (
     </Row>
 
     <p>
-      A static webite built with bare-bones Gatsby and bootstrap! This is meant to be a basic website to show off my content in various forms, but is easily customizable to fit different content and to feature various pages in the homepage. Hosted by Github Pages.
+      A static webite built with bare-bones Gatsby and bootstrap, <b>no template used</b>! This is meant to be a basic website to show off my content in various forms, but is easily customizable to fit different content and to feature various pages in the homepage. Hosted by Github Pages.
     </p>
 
     <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { Row, Col } from "react-bootstrap"
+import { Row, Col, Alert } from "react-bootstrap"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -11,6 +11,15 @@ import { ExternalCard } from "../components/external-links"
 
 
 const page = pageLinks["art"]
+
+const AlertTitle = ({children}) => (
+  <>
+    <h2 className="my-2">{children}</h2>
+    <Alert className="my-3 text-center">
+      Tap on edge of pictures to scroll through album pics
+    </Alert>
+  </>
+)
 
 const SitePage = ({ pageContext }) => (
     <Layout>
@@ -29,10 +38,9 @@ const SitePage = ({ pageContext }) => (
       </Row>
 
 
-
       <Row align="center" lg>
         <Col>
-          <h1>Portfolio</h1>
+          <AlertTitle>Portfolio</AlertTitle>
           <FlickrAlbum
             href="https://www.flickr.com/photos/135898386@N03/albums/72157670372833070"
             imgSrc="https://live.staticflickr.com/5793/20890537248_c9df75deab_z.jpg"
@@ -40,7 +48,7 @@ const SitePage = ({ pageContext }) => (
           />
         </Col>
         <Col>
-          <h1>Paint</h1>
+          <AlertTitle>Paint</AlertTitle>
           <FlickrAlbum
             href="https://www.flickr.com/photos/135898386@N03/albums/72157658054521292"
             imgSrc="https://live.staticflickr.com/620/20455661594_40933b3507.jpg"
@@ -50,7 +58,7 @@ const SitePage = ({ pageContext }) => (
       </Row>
       <Row align="center">
         <Col>
-          <h1>Charcoals</h1>
+          <AlertTitle>Charcoals</AlertTitle>
           <FlickrAlbum
             href="https://www.flickr.com/photos/135898386@N03/albums/72157658059168186"
             imgSrc="https://live.staticflickr.com/4446/26284163899_584b31d185.jpg"
@@ -58,7 +66,7 @@ const SitePage = ({ pageContext }) => (
           />
         </Col>
         <Col>
-          <h1>Sketches</h1>
+          <AlertTitle>Sketches</AlertTitle>
           <FlickrAlbum
             href="https://www.flickr.com/photos/135898386@N03/albums/72157657666322140"
             imgSrc="https://live.staticflickr.com/650/21052157036_ee98fbd582_z.jpg"
@@ -66,8 +74,34 @@ const SitePage = ({ pageContext }) => (
           />
         </Col>
       </Row>
-
-
+      <Row align="center">
+        <Col>
+          <AlertTitle>Ink</AlertTitle>
+          <FlickrAlbum
+            href="https://www.flickr.com/photos/135898386@N03/albums/72157658080700791"
+            imgSrc="https://live.staticflickr.com/5686/20890047830_67d037f1f3.jpg"
+            title="Charcoals"
+          />
+        </Col>
+        <Col>
+          <AlertTitle>Fabric Paint</AlertTitle>
+          <FlickrAlbum
+            href="https://www.flickr.com/photos/135898386@N03/albums/72157657667331558"
+            imgSrc="https://live.staticflickr.com/8717/27879753043_dc5286b977.jpg"
+            title="Sketches"
+          />
+        </Col>
+      </Row>
+      <Row align="center">
+        <Col>
+          <AlertTitle>Pencil</AlertTitle>
+          <FlickrAlbum
+            href="https://www.flickr.com/photos/135898386@N03/albums/72157657666322230"
+            imgSrc="https://live.staticflickr.com/600/20890340760_29ac01a973_w.jpg"
+            title="Charcoals"
+          />
+        </Col>
+      </Row>
 
       <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>
     </Layout>
