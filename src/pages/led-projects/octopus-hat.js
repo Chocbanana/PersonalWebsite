@@ -21,7 +21,8 @@ const page = pageLinks["octohat"]
 const gifstyle = {
   width: "100%",
   minWidth: "150px",
-  marginBottom: "15px"
+  marginBottom: "15px",
+  borderRadius: "30px"
 }
 
 const extLinkProps = {

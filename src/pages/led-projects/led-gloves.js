@@ -18,7 +18,8 @@ const gifstyle = {
   width: "100%",
   minWidth: "150px",
   maxWidth: "500px",
-  marginBottom: "15px"
+  marginBottom: "15px",
+  borderRadius: "30px"
 }
 
 const SitePage = ({ pageContext }) => (
@@ -37,7 +38,7 @@ const SitePage = ({ pageContext }) => (
 
     <h2 className="my-3">The LED Panel</h2>
 
-    <Row>
+    <Row xs={1} sm={1} md={2}>
       <Col>
         <ExternalCard {...pageContext.linkPreviewData[0]} imgStyle={{maxHeight: "200px"}}/>
       </Col>
@@ -45,7 +46,7 @@ const SitePage = ({ pageContext }) => (
         Normally I would have made the panel myself: buying an LED matrix, cutting it down to size, finding an appropriately small microcontroller with bluetooth/wifi capability, programming it, finding and assembling a small power source, adding a button, and voila! However, I also decided to apply my programmer's mentality to this problem, aka -- if there exists what I need, in the form that I need it, jsut use that instead of making it again. So I did! I found reasonably priced panels that not only were sized perfectly, but also had a great-and-tiny power source, and an app that came with them to control the LEDs to boot! The app allows for using text, images, premade animations, or making your own animations. I was never planning on making an app so that was an upgrade already! Check out the panels, which can be found on Etsy.
       </Col>
     </Row>
-      
+
     <h3 className="my-3">Some Patterns</h3>
 
     <Row>
