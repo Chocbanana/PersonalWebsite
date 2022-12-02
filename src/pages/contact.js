@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import { Form, Button, Row, Col, ListGroup } from "react-bootstrap"
 import { FaFlickr, FaTwitter, FaLinkedin, FaGithub} from 'react-icons/fa'
 import { RiPrinterCloudFill } from 'react-icons/ri'
@@ -7,6 +7,7 @@ import { RiPrinterCloudFill } from 'react-icons/ri'
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import pageLinks from "../data/site-pages"
+import useSiteMetadata from "../hooks/site-metadata"
 
 const page = pageLinks["contact"]
 
@@ -23,20 +24,7 @@ const SocialItem = ({href, Icon, title, children}) => (
 )
 
 const SitePage = () => {
-
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          linkedIn
-          twitter
-          flickr
-          github
-        }
-      }
-    }
-  `)
+  const { linkedIn, flickr, github, twitter } = useSiteMetadata()
 
   return (
     <Layout>
@@ -46,19 +34,19 @@ const SitePage = () => {
       <p style={{textAlign:"center"}}>You can find me on the following sites:</p>
 
       <ListGroup horizontal="md" className="justify-content-center text-center my-2">
-        <SocialItem href={data.site.siteMetadata?.linkedIn} Icon={FaLinkedin} title="LinkedIn">
+        <SocialItem href={linkedIn} Icon={FaLinkedin} title="LinkedIn">
           My resume and all my professional doings. Please don't message me on here, too much recruiter spam
         </SocialItem>
-        <SocialItem href={data.site.siteMetadata?.flickr} Icon={FaFlickr} title="Flickr">
+        <SocialItem href={flickr} Icon={FaFlickr} title="Flickr">
           All my artwork, along with pictures of my LED projects, in full glorious high-res
         </SocialItem>
         <SocialItem href="https://www.printables.com/social/44101-fractaly/models" Icon={RiPrinterCloudFill} title="3D Printables">
           Where all my 3d designs and prints are hosted, and you can view and download for free!
         </SocialItem>
-        <SocialItem href={data.site.siteMetadata?.github} Icon={FaGithub} title="Github">
+        <SocialItem href={github} Icon={FaGithub} title="Github">
           My public programming projects. Don't contact here, I probably won't check
         </SocialItem>
-        <SocialItem href={data.site.siteMetadata?.twitter} Icon={FaTwitter} title="Twitter">
+        <SocialItem href={twitter} Icon={FaTwitter} title="Twitter">
           My twitter; don't DM me here, I barely check it.
         </SocialItem>
       </ListGroup>
