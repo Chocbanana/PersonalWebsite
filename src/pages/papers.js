@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
+import { LayoutWithTitle } from "../components/layout"
 import Seo from "../components/seo"
 import pageLinks from "../data/site-pages"
 
@@ -9,9 +9,7 @@ const page = pageLinks["papers"]
 
 const SitePage = () => {
   return (
-    <Layout>
-      <h1 style={{textAlign:"center"}}>{page.title}</h1>
-      <h5>{page.description}</h5>
+    <LayoutWithTitle page={page}>
 
       <p style={{textAlign: "center"}}>
         My thesis from undergrad: Exploring More Biologically-Inspired Recurrent Neural Networks.
@@ -29,7 +27,7 @@ const SitePage = () => {
       <iframe title="thesis" src="https://docs.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1SeGrkOLZq3bLLyp_tlT18FL2ny6hf2-J&hl=en&embedded=true" style={{width:"100%", height:"800px"}} frameborder="0"></iframe>
 
       <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>
-    </Layout>
+    </LayoutWithTitle>
   )
 }
 

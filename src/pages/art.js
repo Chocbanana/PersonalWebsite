@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { Row, Col } from "react-bootstrap"
 
-import Layout from "../components/layout"
+import { LayoutWithTitle } from "../components/layout"
 import Seo from "../components/seo"
 import pageLinks from "../data/site-pages"
 
@@ -13,9 +13,7 @@ import { ExternalCard } from "../components/external-links"
 const page = pageLinks["art"]
 
 const SitePage = ({ pageContext }) => (
-    <Layout>
-      <h1 style={{textAlign:"center"}}>{page.title}</h1>
-      <h5>{page.description}</h5>
+  <LayoutWithTitle page={page}>
 
       <Row style={{marginTop: "2rem", marginBottom: "2rem"}}>
         <Col md={6}
@@ -95,7 +93,7 @@ const SitePage = ({ pageContext }) => (
       </Row>
 
       <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>
-    </Layout>
+    </LayoutWithTitle>
 )
 
 export const Head = () => <Seo {...page} />

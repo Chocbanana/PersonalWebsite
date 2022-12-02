@@ -4,7 +4,7 @@ import { Form, Button, Row, Col, ListGroup } from "react-bootstrap"
 import { FaFlickr, FaTwitter, FaLinkedin, FaGithub} from 'react-icons/fa'
 import { RiPrinterCloudFill } from 'react-icons/ri'
 
-import Layout from "../components/layout"
+import { LayoutWithTitle } from "../components/layout"
 import Seo from "../components/seo"
 import pageLinks from "../data/site-pages"
 import useSiteMetadata from "../hooks/site-metadata"
@@ -27,9 +27,7 @@ const SitePage = () => {
   const { linkedIn, flickr, github, twitter } = useSiteMetadata()
 
   return (
-    <Layout>
-      <h1 style={{textAlign:"center"}}>{page.title}</h1>
-      <h5 style={{textAlign:"center"}}>{page.description}</h5>
+    <LayoutWithTitle page={page}>
 
       <p style={{textAlign:"center"}}>You can find me on the following sites:</p>
 
@@ -111,7 +109,7 @@ const SitePage = () => {
       </Row>
 
       <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>
-    </Layout>
+    </LayoutWithTitle>
   )
 }
 

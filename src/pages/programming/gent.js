@@ -13,6 +13,7 @@ const page = pageLinks["gent"]
 
 const SitePage = ({ pageContext }) => (
   <LayoutWithTitle page={page}>
+
     <Row className="justify-content-center" style={{marginTop: "2rem", marginBottom: "2rem"}}><Col md="auto"><ExternalCard {...pageContext.linkPreviewData[0]}/></Col></Row>
     <p>
       A library for the easy construction, training, and running of artifical neural networks, with the ability to serialize and load arbitrary network architecture definitions and pre-trained weights. Built on top of pytorch.

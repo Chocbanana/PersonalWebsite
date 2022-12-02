@@ -78,7 +78,7 @@ const LayoutWithTitle = ({ page, children }) => (
             backgroundColor: "rgba(var(--bs-secondary-rgb), 0.95)"
           }}
           >
-          <h5 style={{fontWeight: "lighter", textAlign: "center"}}>{page.description}</h5>
+          <h5 style={{fontWeight: "lighter", textAlign: "center", marginBottom: "2rem"}}>{page.description}</h5>
           {children}
         </Col>
       </Row>
