@@ -7,6 +7,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import {Container, Row, Col, Stack} from 'react-bootstrap'
 import {FaFlickr, FaTwitter, FaLinkedin, FaGithub} from 'react-icons/fa'
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 import  "./index.scss"
 
@@ -107,20 +108,20 @@ const Layout = ({ children }) => {
                 <Col>
                   <Stack gap={1}>
                     <div>
-                      <FaLinkedin/><a {...ftLinksProps} href={data.site.siteMetadata?.linkedIn || "/#"}>  LinkedIn</a>
+                      <FaLinkedin/><OutboundLink {...ftLinksProps} href={data.site.siteMetadata?.linkedIn || "/#"}>  LinkedIn</OutboundLink>
                     </div>
                     <div>
-                      <FaTwitter/><a {...ftLinksProps} href={data.site.siteMetadata?.twitter || "/#"}>  Twitter</a>
+                      <FaTwitter/><OutboundLink {...ftLinksProps} href={data.site.siteMetadata?.twitter || "/#"}>  Twitter</OutboundLink>
                     </div>
                   </Stack>
                 </Col>
                 <Col>
                   <Stack gap={1}>
                     <div>
-                      <FaFlickr/><a {...ftLinksProps} href={data.site.siteMetadata?.flickr || "/#"}>  Flickr</a>
+                      <FaFlickr/><OutboundLink {...ftLinksProps} href={data.site.siteMetadata?.flickr || "/#"}>  Flickr</OutboundLink>
                     </div>
                     <div>
-                      <FaGithub/><a {...ftLinksProps} href={data.site.siteMetadata?.github || "/#"}>  Github</a>
+                      <FaGithub/><OutboundLink {...ftLinksProps} href={data.site.siteMetadata?.github || "/#"}>  Github</OutboundLink>
                     </div>
                   </Stack>
                 </Col>
@@ -130,7 +131,7 @@ const Layout = ({ children }) => {
             <Col style={{fontSize: `0.75rem`}} className="align-self-end">
               © {new Date().getFullYear()} &middot; Built with
               {` `}
-              <a href="https://www.gatsbyjs.com">Gatsby</a>
+              <OutboundLink href="https://www.gatsbyjs.com">Gatsby</OutboundLink>
             </Col>
           </Row>
         </Container>

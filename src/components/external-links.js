@@ -1,16 +1,17 @@
 import * as React from "react"
 import PropTypes from "prop-types"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 import { Card, Row, Col } from "react-bootstrap"
 
 const ExternalLink = ({href, text}) => (
-  <a href={href}
+  <OutboundLink href={href}
     target="_blank"
     rel="noreferrer"
     style={{textDecoration: "none"}}
   >
     <h4 align="center">{text}</h4>
-  </a>
+  </OutboundLink>
 )
 
 const ExternalCard = ({url, title, siteName, description, images, favicons, imgStyle }) => (
@@ -36,7 +37,8 @@ const ExternalCard = ({url, title, siteName, description, images, favicons, imgS
       <Card.Subtitle>{description}</Card.Subtitle>
     </Card.Body>
     <Card.Footer className="text-muted text-center">{url}</Card.Footer>
-    <a href={url} target="_blank" rel="noreferrer" className="stretched-link"> </a>
+    <OutboundLink href={url} target="_blank" rel="noreferrer" className="stretched-link">
+    </OutboundLink>
   </Card>
 
 )

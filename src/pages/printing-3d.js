@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { Row, Col } from "react-bootstrap"
 import { StaticImage } from "gatsby-plugin-image"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -27,7 +28,7 @@ const SitePage = ({ pageContext }) => (
         </Col>
       </Row>
 
-      <a href="https://www.printables.com/social/44101-fractaly/models" target="_blank" rel="noreferrer">
+      <OutboundLink href="https://www.printables.com/social/44101-fractaly/models" target="_blank" rel="noreferrer">
         <StaticImage
           src="../images/printables_site.png"
           loading="eager"
@@ -36,7 +37,7 @@ const SitePage = ({ pageContext }) => (
           formats={["auto", "webp", "avif"]}
           alt=""
         />
-      </a>
+      </OutboundLink>
 
       <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>
     </Layout>
