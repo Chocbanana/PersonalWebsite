@@ -41,12 +41,22 @@ const FeaturedCard = ({pageDeets}) => (
 </Card>
 )
 
+const HomeHeader = ({children}) => (
+  <h1 className="display-2 text-primary" style={{
+    // color: "white",
+    fontWeight: "lighter",
+    textShadow: "1px 1px 5px black, 1px -1px 5px black, -1px 1px 5px black, -1px -1px 5px black"
+  }}>
+    {children}
+  </h1>
+)
+
 const HomePage = () => (
     <Layout>
       <Row xs={1} sm={2}>
         <Col>
-          <h1 className="text-primary">Bhavana</h1>
-          <h1 className="text-primary">Jonnalagadda</h1>
+          <HomeHeader>Bhavana</HomeHeader>
+          <HomeHeader>Jonnalagadda</HomeHeader>
           <Row>
             <Col align="center" lg={4}>
               <StaticImage
@@ -71,10 +81,11 @@ const HomePage = () => (
           </Row>
         </Col>
         <Col align="center">
-          <h1 style={{color: "var(--bs-primary)"}}>Featured Work</h1>
+          <HomeHeader>Featured Work</HomeHeader>
           <Row style={{marginBottom: "20px"}} xs={1} sm={1} xl={2} xxl={3}>
-            <Col><FeaturedCard pageDeets={pageLinks["printing"]}/></Col>
+            <Col><FeaturedCard pageDeets={pageLinks["faceshields"]}/></Col>
             <Col><FeaturedCard pageDeets={pageLinks["octohat"]}/></Col>
+            <Col><FeaturedCard pageDeets={pageLinks["printing"]}/></Col>
             <Col><FeaturedCard pageDeets={pageLinks["gent"]}/></Col>
             <Col><FeaturedCard pageDeets={pageLinks["art"]}/></Col>
             <Col><FeaturedCard pageDeets={pageLinks["papers"]}/></Col>

@@ -4,10 +4,10 @@ import { Row, Col } from "react-bootstrap"
 import { StaticImage } from "gatsby-plugin-image"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 
-import { LayoutWithTitle } from "../components/layout"
-import Seo from "../components/seo"
-import pageLinks from "../data/site-pages"
-import { ExternalCard } from "../components/external-links"
+import { LayoutWithTitle } from "../../components/layout"
+import Seo from "../../components/seo"
+import pageLinks from "../../data/site-pages"
+import { ExternalCard } from "../../components/external-links"
 
 
 

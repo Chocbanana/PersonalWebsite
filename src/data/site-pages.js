@@ -4,14 +4,23 @@ import printthumb from "../images/pagethumbs/printing.webp"
 import paperthumb from "../images/pagethumbs/papers.png"
 import octothumb from "../images/pagethumbs/octothumb.jpg"
 import glovethumb from "../images/pagethumbs/gloves.jpg"
+import facethumb from "../images/pagethumbs/faceshields.jpg"
 
 
 const pageLinks = {
   printing: {
     title: "3D Printing",
-    url: "/printing-3d",
+    url: "/printed/printing-3d",
+    folder: "3D Printing",
     image: printthumb,
     description: "My 3D printed projects I designed",
+  },
+  faceshields: {
+    title: "Covid-19 Face Shields",
+    url: "/printed/face-shields",
+    folder: "3D Printing",
+    image: facethumb,
+    description: "Face shields I 3D printed and donated to hospitals during Covid-19",
   },
   octohat: {
     title: "LED Octopus Hat",

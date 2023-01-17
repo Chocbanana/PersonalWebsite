@@ -7,7 +7,8 @@ const previewLinks = {
   gent: ["https://github.com/Chocbanana/Gent"],
   art: ["https://www.flickr.com/photos/135898386@N03/albums/"],
   printing: ["https://www.printables.com/social/44101-fractaly/models"],
-  led: ["https://www.etsy.com/listing/1082658511/paper-thin-led-matrix-diy-tech-component"]
+  led: ["https://www.etsy.com/listing/1082658511/paper-thin-led-matrix-diy-tech-component"],
+  face: ["https://www.prusa3d.com/page/covid-19_379/"]
 }
 
 // Query, server/build build time, for data from external website for link previews
