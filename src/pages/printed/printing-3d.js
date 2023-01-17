@@ -28,7 +28,7 @@ const SitePage = ({ pageContext }) => (
 
     <OutboundLink href="https://www.printables.com/social/44101-fractaly/models" target="_blank" rel="noreferrer">
       <StaticImage
-        src="../images/printables_site.png"
+        src="../../images/printables_site.png"
         loading="eager"
         // width={30}
         quality={95}

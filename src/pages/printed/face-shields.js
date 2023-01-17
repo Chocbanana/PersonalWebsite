@@ -49,7 +49,7 @@ const SitePage = ({ pageContext }) => (
           <li>Montefiore New Rochelle Hospital</li>
           <li>St. John{"’"}s hospital</li>
         </ul>
-        In total it was over 300 face shields sent out!
+        In total it was over 300 face shields sent out! I was even featured on <OutboundLink href="https://www.virtu.com/about/virtutogether/" target="_blank" rel="noreferrer">the website for Virtu Financial</OutboundLink>.
       </Col>
     </Row>
 

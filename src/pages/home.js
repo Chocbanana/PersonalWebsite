@@ -44,7 +44,7 @@ const FeaturedCard = ({pageDeets}) => (
 const HomeHeader = ({children}) => (
   <h1 className="display-2 text-primary" style={{
     // color: "white",
-    fontWeight: "lighter",
+    // fontWeight: "lighter",
     textShadow: "1px 1px 5px black, 1px -1px 5px black, -1px 1px 5px black, -1px -1px 5px black"
   }}>
     {children}
