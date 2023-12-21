@@ -17,6 +17,7 @@ const TableOfContents = () => {
         textContent: h.textContent,
         level: Number(h.tagName.substring(1)),
       }
+      // Create ids for all headings to link to
       if (h.id === "") h.id = h.textContent.replace(/[\W\d]/g, "-")
       heading.id = h.id
       newHeadings.push(heading)
@@ -26,12 +27,10 @@ const TableOfContents = () => {
   }, [])
 
   const toc = (
-    <ListGroup style={{ position: "sticky", top: 10, bottom: 0, left: 0, alignSelf: "flex-start" }} id="toc">
+    <ListGroup id="toc">
       {headings.map(h => (
         <ListGroupItem action={true} key={h.id} eventKey={h.id} href={`#${h.id}`} variant="secondary">
-          {/* <a href={`#${h.id}`} style={{ textDecoration: "none", color: "green" }}> */}
           <div style={{ marginLeft: `${2 * (h.level - 2)}em` }}>{h.textContent}</div>
-          {/* </a> */}
         </ListGroupItem>
       ))}
     </ListGroup>
@@ -48,14 +47,6 @@ const TableOfContents = () => {
       >
         <GiHamburgerMenu />
       </Button>
-
-      {/* <Card body
-      border="secondary" bg="secondary"
-      // Makes the card dissapear upon small screen
-      // className="d-none d-lg-block"
-      style={{position: "fixed"}}>
-      {toc}
-    </Card> */}
 
       <Offcanvas
         show={show}

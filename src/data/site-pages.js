@@ -7,7 +7,6 @@ import glovethumb from "../images/pagethumbs/gloves.jpg"
 import facethumb from "../images/pagethumbs/faceshields.jpg"
 import brainthumb from "../images/pagethumbs/brainthumb.jpg"
 
-
 const pageLinks = {
   printing: {
     title: "3D Printing",
@@ -35,14 +34,14 @@ const pageLinks = {
     url: "/led-projects/octopus-hat",
     folder: "LED Projects",
     image: octothumb,
-    description: "A lightup octopus hat I coded, 3D model designed, printed, and made!"
+    description: "A lightup octopus hat I coded, 3D model designed, printed, and made!",
   },
   ledgloves: {
     title: "LED Panel Gloves",
     url: "/led-projects/led-gloves",
     folder: "LED Projects",
     image: glovethumb,
-    description: "LED panel dance gloves with customizable pattens, images, or text"
+    description: "LED panel dance gloves with customizable pattens, images, or text",
   },
   art: {
     title: "Art",
@@ -65,10 +64,10 @@ const pageLinks = {
     description: "A library for the easy construction and training of neural networks",
   },
   papers: {
-    title: "Papers",
+    title: "Research and Papers",
     url: "/papers",
     image: paperthumb,
-    description: "Papers I've authored or co-authored",
+    description: "Research conducted in AI, and papers I've authored or co-authored",
   },
   contact: {
     title: "Contact Me",

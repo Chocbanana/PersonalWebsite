@@ -1,4 +1,8 @@
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+  },
+
   siteMetadata: {
     title: `Bhav's Personal Website`,
     description: `My website for displaying all my projects and public work: 3D printing, LED wearables, traditional art, academic papers, AI research, and more!`,
@@ -34,8 +38,8 @@ module.exports = {
           formats: [`auto`, `webp`, `avif`],
           quality: 95,
           transformOptions: {
-            fit: "inside"
-          }
+            fit: "inside",
+          },
         },
       },
     },

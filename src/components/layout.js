@@ -1,13 +1,12 @@
 /**
  * The main layout of every page in the site. Still need to incude an SEO component per page file.
  */
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { Container, Row, Col, Stack } from "react-bootstrap"
 import { FaFlickr, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
-// import ScrollSpy from "react-ui-scrollspy"
 import { ScrollSpy } from "bootstrap"
 
 import "./index.scss"
@@ -18,37 +17,32 @@ import useSiteMetadata from "../hooks/site-metadata"
 
 import BgImage from "../images/bgimg.png"
 
-// new ScrollSpy(document.getElementById("toc-body"), {
-//   target: "#toc",
-// })
-
 const LayoutWithToc = ({ children, page }) => {
+  const [scrollspy, setScrollspy] = useState(null)
+  const toc = <TableOfContents />
+
   useEffect(() => {
-    new ScrollSpy(document.getElementById("toc-body"), {
-      target: "#toc",
-    })
-    const firstScrollSpyEl = document.querySelector('[data-bs-spy="scroll"]')
-    ScrollSpy.getInstance(firstScrollSpyEl).refresh()
-  }, [children])
+    if (scrollspy === null) {
+      setScrollspy(
+        new ScrollSpy(document.getElementById("toc-body"), {
+          target: "#toc",
+          smoothScroll: true,
+        })
+      )
+    } else {
+      scrollspy.refresh()
+    }
+  }, [children, toc])
 
   return (
     <LayoutWithTitle page={page}>
       <Row>
-        <Col>
-          <TableOfContents />
-        </Col>
+        <Col>{toc}</Col>
 
         <Col
           lg={10}
           md={11}
-          // All these fields just to get scrollSpy (highlighting where you are in
-          // a page) working....
-          data-bs-spy="scroll"
-          data-bs-target="#toc"
-          data-spy="scroll"
-          data-target="#toc"
-          style={{ position: "relative" }}
-          tabIndex="0"
+          tabIndex="0" // Needed for scrollspy?
           id="toc-body"
         >
           {children}

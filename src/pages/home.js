@@ -90,25 +90,25 @@ const HomePage = () => (
             <FeaturedCard pageDeets={pageLinks["faceshields"]} />
           </Col>
           <Col>
-            <FeaturedCard pageDeets={pageLinks["octohat"]} />
+            <FeaturedCard pageDeets={pageLinks["brainlamp"]} />
           </Col>
           <Col>
-            <FeaturedCard pageDeets={pageLinks["brainlamp"]} />
+            <FeaturedCard pageDeets={pageLinks["octohat"]} />
           </Col>
           <Col>
             <FeaturedCard pageDeets={pageLinks["printing"]} />
           </Col>
           <Col>
-            <FeaturedCard pageDeets={pageLinks["gent"]} />
+            <FeaturedCard pageDeets={pageLinks["papers"]} />
           </Col>
           <Col>
             <FeaturedCard pageDeets={pageLinks["art"]} />
           </Col>
           <Col>
-            <FeaturedCard pageDeets={pageLinks["papers"]} />
+            <FeaturedCard pageDeets={pageLinks["ledgloves"]} />
           </Col>
           <Col>
-            <FeaturedCard pageDeets={pageLinks["ledgloves"]} />
+            <FeaturedCard pageDeets={pageLinks["gent"]} />
           </Col>
         </Row>
       </Col>

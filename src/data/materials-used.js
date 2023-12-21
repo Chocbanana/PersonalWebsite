@@ -211,7 +211,7 @@ export const MaterialsUsedBrainLamp = () => (
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="2"> Total Cost </td>
+        <td colSpan="2"> Total Cost </td>
         <td>$59</td>
       </tr>
     </tfoot>

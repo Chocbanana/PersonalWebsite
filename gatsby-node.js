@@ -36,6 +36,20 @@ exports.onCreatePage = ({ page, actions }) => {
 
 // Allow loading of raw .ino/.cpp/.h files as text
 exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) => {
+  // Document is not defined during node.js SSR build
+  // AKA using naked Bootstrap breaks things if SSR
+  if (stage === "build-html" || stage === "develop-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /(?<!react\-)bootstrap/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
   actions.setWebpackConfig({
     module: {
       rules: [
