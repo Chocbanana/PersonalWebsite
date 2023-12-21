@@ -5,6 +5,7 @@ import paperthumb from "../images/pagethumbs/papers.png"
 import octothumb from "../images/pagethumbs/octothumb.jpg"
 import glovethumb from "../images/pagethumbs/gloves.jpg"
 import facethumb from "../images/pagethumbs/faceshields.jpg"
+import brainthumb from "../images/pagethumbs/brainthumb.jpg"
 
 
 const pageLinks = {
@@ -21,6 +22,13 @@ const pageLinks = {
     folder: "3D Printing",
     image: facethumb,
     description: "Face shields I 3D printed and donated to hospitals during Covid-19",
+  },
+  brainlamp: {
+    title: "From MRI to Brain Lamp",
+    url: "/printed/brain-lamp",
+    folder: "3D Printing",
+    image: brainthumb,
+    description: "Turned an MRI of my brain into a 3D printable object, and then into a hollow smart lamp",
   },
   octohat: {
     title: "LED Octopus Hat",

@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Table } from "react-bootstrap"
 
-export const MaterialsUsed = () => (
-  <Table bordered hover striped responsive variant="dark">
+export const MaterialsUsedOctopus = () => (
+  <Table bordered hover striped responsive variant="secondary">
     <thead>
       <tr>
         <th>Name</th>
@@ -19,7 +19,9 @@ export const MaterialsUsed = () => (
       <tr>
         <td> New Hat</td>
         <td> $17.00</td>
-        <td><a href="https://www.amazon.com/dp/B07XGCVNNG"> https://www.amazon.com/dp/B07XGCVNNG</a></td>
+        <td>
+          <a href="https://www.amazon.com/dp/B07XGCVNNG"> https://www.amazon.com/dp/B07XGCVNNG</a>
+        </td>
       </tr>
       <tr>
         <td>Filament</td>
@@ -64,18 +66,21 @@ export const MaterialsUsed = () => (
       <tr>
         <td>More jst connectors</td>
         <td>$10.00</td>
-        <td>Fucking didn't realize there's multiple types of 2 pin jst connectors and got the wrong one initially...</td>
+        <td>
+          Fucking didn't realize there's multiple types of 2 pin jst connectors and got the wrong one initially...
+        </td>
       </tr>
       <tr>
         <td>WS2812B Addressable LED Strip</td>
         <td>$36.00</td>
-        <td>5V, 60pixel/m,  IP67, 5 meters, RGB order: GRB (Not RGB)</td>
+        <td>5V, 60pixel/m, IP67, 5 meters, RGB order: GRB (Not RGB)</td>
       </tr>
       <tr>
         <td>Teensy 3.2 + header</td>
         <td>$20.00</td>
-        <td><a href="https://www.adafruit.com/product/2756">
-            https://www.adafruit.com/product/2756</a></td>
+        <td>
+          <a href="https://www.adafruit.com/product/2756">https://www.adafruit.com/product/2756</a>
+        </td>
       </tr>
       <tr>
         <td>OctoWS2811 Adapter for Teensy 3.1 - Control tons of NeoPixels!</td>
@@ -100,8 +105,11 @@ export const MaterialsUsed = () => (
       <tr>
         <td>Soldering kit</td>
         <td>$20.00</td>
-        <td><a href="https://www.amazon.com/gp/product/B07S61WT16/ref=ppx_od_dt_b_asin_title_s02?ie=UTF8&amp;psc=1">
-            https://www.amazon.com/gp/product/B07S61WT16/ref=ppx_od_dt_b_asin_title_s02?ie=UTF8&amp;psc=1</a></td>
+        <td>
+          <a href="https://www.amazon.com/gp/product/B07S61WT16/ref=ppx_od_dt_b_asin_title_s02?ie=UTF8&amp;psc=1">
+            https://www.amazon.com/gp/product/B07S61WT16/ref=ppx_od_dt_b_asin_title_s02?ie=UTF8&amp;psc=1
+          </a>
+        </td>
       </tr>
       <tr>
         <td>Ethernet cable</td>
@@ -116,8 +124,12 @@ export const MaterialsUsed = () => (
       <tr>
         <td>Mini top hat</td>
         <td>$11.00</td>
-        <td>Too small ultimately.... <a href="https://www.amazon.com/gp/product/B07D4JZ6KM/ref=ppx_od_dt_b_asin_title_s02?ie=UTF8&amp;psc=1">
-            https://www.amazon.com/gp/product/B07D4JZ6KM/ref=ppx_od_dt_b_asin_title_s02?ie=UTF8&amp;psc=1</a></td>
+        <td>
+          Too small ultimately....{" "}
+          <a href="https://www.amazon.com/gp/product/B07D4JZ6KM/ref=ppx_od_dt_b_asin_title_s02?ie=UTF8&amp;psc=1">
+            https://www.amazon.com/gp/product/B07D4JZ6KM/ref=ppx_od_dt_b_asin_title_s02?ie=UTF8&amp;psc=1
+          </a>
+        </td>
       </tr>
       <tr>
         <td>10 Female 12v DC Power Jack Adapter Connector for Led Strip</td>
@@ -130,5 +142,78 @@ export const MaterialsUsed = () => (
         <td>Would have BEEN NICE to know I NEEDED this beforehand!!!</td>
       </tr>
     </tbody>
+  </Table>
+)
+
+export const MaterialsUsedBrainLamp = () => (
+  <Table bordered hover striped responsive variant="secondary">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Link</th>
+        <th>Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> Smart LED bulb </td>
+        <td>
+          <a
+            href="https://www.amazon.com/dp/B093Y19ZRH?psc=1&amp;ref=ppx_yo2ov_dt_b_product_details"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Amazon
+          </a>
+        </td>
+        <td>$9</td>
+      </tr>
+      <tr>
+        <td>Lamp base</td>
+        <td>
+          <a
+            href="https://www.amazon.com/dp/B08H836RQF?psc=1&amp;ref=ppx_yo2ov_dt_b_product_details"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Amazon
+          </a>
+        </td>
+        <td>$10</td>
+      </tr>
+      <tr>
+        <td>10mm diameter magnets</td>
+        <td>
+          <a href="https://www.amazon.com/gp/product/B07MV6M12H/" target="_blank" rel="noopener noreferrer">
+            Amazon
+          </a>
+        </td>
+        <td>$10</td>
+      </tr>
+      <tr>
+        <td>Super glue / gorilla glue </td>
+        <td></td>
+        <td>$5</td>
+      </tr>
+      <tr>
+        <td>{">"} 500g of clear/translucent printing plastic</td>
+        <td>
+          <a
+            href="https://atomicfilament.com/collections/petg-3d-printer-filament-us-made-with-free-shipping/products/rose-gold-metallic-translucent-petg-pro?variant=31476397047869"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Atomic Filament Rose Gold Translucent PETG
+          </a>
+        </td>
+        <td>$25</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2"> Total Cost </td>
+        <td>$59</td>
+      </tr>
+    </tfoot>
   </Table>
 )

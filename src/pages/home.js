@@ -8,97 +8,115 @@ import pageLinks from "../data/site-pages"
 
 import exImg from "../images/pagethumbs/example.png"
 
-
-const FeaturedCard = ({pageDeets}) => (
-<Card
-  border="green"
-  className="my-3"
-  style={{
-    maxWidth: "300px",
-    // minWidth: "200px",
-    position: "relative",
-    backgroundColor: "rgba(var(--bs-light-rgb), 0.35)",
-    }}>
-  <Card.Img src={("image" in pageDeets) ? pageDeets.image : exImg} alt="Card image" />
-  <Card.ImgOverlay>
-    <Card.Title style={{
-      color: "var(--bs-secondary)",
-      fontWeight: "bolder",
-      fontSize: "xx-large",
-      textShadow: "1px 1px 3px black, 1px -1px 3px black, -1px 1px 3px black, -1px -1px 3px black"
-      // WebkitTextStroke: "1px black"
-      }}>
-      {pageDeets.title}
-    </Card.Title>
-  </Card.ImgOverlay>
-  <Card.Body>
-    <Card.Text>
-      {pageDeets.description}
-    </Card.Text>
-  </Card.Body>
-  {/* To make the entire card clickable, also need the position=relative above */}
-  <a href={pageDeets.url} className="stretched-link"> </a>
-</Card>
+const FeaturedCard = ({ pageDeets }) => (
+  <Card
+    border="green"
+    className="my-3"
+    style={{
+      maxWidth: "300px",
+      // minWidth: "200px",
+      position: "relative",
+      backgroundColor: "rgba(var(--bs-light-rgb), 0.35)",
+    }}
+  >
+    <Card.Img src={"image" in pageDeets ? pageDeets.image : exImg} alt="Card image" />
+    <Card.ImgOverlay>
+      <Card.Title
+        style={{
+          color: "var(--bs-secondary)",
+          fontWeight: "bolder",
+          fontSize: "xx-large",
+          textShadow: "1px 1px 3px black, 1px -1px 3px black, -1px 1px 3px black, -1px -1px 3px black",
+          // WebkitTextStroke: "1px black"
+        }}
+      >
+        {pageDeets.title}
+      </Card.Title>
+    </Card.ImgOverlay>
+    <Card.Body>
+      <Card.Text>{pageDeets.description}</Card.Text>
+    </Card.Body>
+    {/* To make the entire card clickable, also need the position=relative above */}
+    <a href={pageDeets.url} className="stretched-link">
+      {" "}
+    </a>
+  </Card>
 )
 
-const HomeHeader = ({children}) => (
-  <h1 className="display-2 text-primary" style={{
-    // color: "white",
-    // fontWeight: "lighter",
-    textShadow: "1px 1px 5px black, 1px -1px 5px black, -1px 1px 5px black, -1px -1px 5px black"
-  }}>
+const HomeHeader = ({ children }) => (
+  <h1
+    className="display-2 text-primary"
+    style={{
+      // color: "white",
+      fontWeight: "bold",
+      // textShadow: "1px 1px 5px white, 1px -1px 5px white, -1px 1px 5px white, -1px -1px 5px white",
+    }}
+  >
     {children}
   </h1>
 )
 
 const HomePage = () => (
-    <Layout>
-      <Row xs={1} sm={2}>
-        <Col>
-          <HomeHeader>Bhavana</HomeHeader>
-          <HomeHeader>Jonnalagadda</HomeHeader>
-          <Row>
-            <Col align="center" lg={4}>
-              <StaticImage
-                src="../images/myfacesquare.jpg"
-                loading="eager"
-                width={150}
-                quality={100}
-                formats={["auto", "webp", "avif"]}
-                alt="My face"
-                imgStyle={{border: "3px solid var(--bs-info)",
-                  }}
-                style={{margin: "10px", boxShadow: "5px 5px 10px 2px var(--bs-info)"}}
-              />
-            </Col>
-            <Col>
-              <h4 style={{fontWeight: "lighter"}}>
-                Welcome! This is my website for displaying all my projects and public work:
-                3D printing, LED wearables, traditional art, academic
-                papers, AI research, and more!
-              </h4>
-            </Col>
-          </Row>
-        </Col>
-        <Col align="center">
-          <HomeHeader>Featured Work</HomeHeader>
-          <Row style={{marginBottom: "20px"}} xs={1} sm={1} xl={2} xxl={3}>
-            <Col><FeaturedCard pageDeets={pageLinks["faceshields"]}/></Col>
-            <Col><FeaturedCard pageDeets={pageLinks["octohat"]}/></Col>
-            <Col><FeaturedCard pageDeets={pageLinks["printing"]}/></Col>
-            <Col><FeaturedCard pageDeets={pageLinks["gent"]}/></Col>
-            <Col><FeaturedCard pageDeets={pageLinks["art"]}/></Col>
-            <Col><FeaturedCard pageDeets={pageLinks["papers"]}/></Col>
-            <Col><FeaturedCard pageDeets={pageLinks["ledgloves"]}/></Col>
-          </Row>
-        </Col>
-      </Row>
-
-    </Layout>
-  )
+  <Layout>
+    <Row xs={1} sm={2}>
+      <Col>
+        <HomeHeader>Bhavana</HomeHeader>
+        <HomeHeader>Jonnalagadda</HomeHeader>
+        <Row>
+          <Col align="center" lg={4}>
+            <StaticImage
+              src="../images/myfacesquare.jpg"
+              loading="eager"
+              width={150}
+              quality={100}
+              formats={["auto", "webp", "avif"]}
+              alt="My face"
+              imgStyle={{ border: "3px solid var(--bs-info)" }}
+              style={{ margin: "10px", boxShadow: "5px 5px 10px 2px var(--bs-info)" }}
+            />
+          </Col>
+          <Col>
+            <h4 style={{ fontWeight: "lighter" }}>
+              Welcome! This is my website for displaying all my projects and public work: 3D printing, LED wearables,
+              traditional art, academic papers, AI research, and more!
+            </h4>
+          </Col>
+        </Row>
+      </Col>
+      <Col align="center">
+        <HomeHeader>Featured Work</HomeHeader>
+        <Row style={{ marginBottom: "20px" }} xs={1} sm={1} xl={2} xxl={3}>
+          <Col>
+            <FeaturedCard pageDeets={pageLinks["faceshields"]} />
+          </Col>
+          <Col>
+            <FeaturedCard pageDeets={pageLinks["octohat"]} />
+          </Col>
+          <Col>
+            <FeaturedCard pageDeets={pageLinks["brainlamp"]} />
+          </Col>
+          <Col>
+            <FeaturedCard pageDeets={pageLinks["printing"]} />
+          </Col>
+          <Col>
+            <FeaturedCard pageDeets={pageLinks["gent"]} />
+          </Col>
+          <Col>
+            <FeaturedCard pageDeets={pageLinks["art"]} />
+          </Col>
+          <Col>
+            <FeaturedCard pageDeets={pageLinks["papers"]} />
+          </Col>
+          <Col>
+            <FeaturedCard pageDeets={pageLinks["ledgloves"]} />
+          </Col>
+        </Row>
+      </Col>
+    </Row>
+  </Layout>
+)
 
 export const Head = () => <Seo title="Home" />
-
 
 // const FeaturedCardOld = ({pageDeets}) => (
 //   <div className="link" style={{
@@ -135,6 +153,5 @@ export const Head = () => <Seo title="Home" />
 //     <p>{pageDeets.description}</p>
 //   </div>
 // )
-
 
 export default HomePage

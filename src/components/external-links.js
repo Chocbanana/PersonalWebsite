@@ -2,45 +2,47 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 
-import { Card, Row, Col } from "react-bootstrap"
+import { Card, Row, Col, Image } from "react-bootstrap"
 
-const ExternalLink = ({href, text}) => (
-  <OutboundLink href={href}
-    target="_blank"
-    rel="noreferrer"
-    style={{textDecoration: "none"}}
-  >
+const ExternalLink = ({ href, text }) => (
+  <OutboundLink href={href} target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}>
     <h4 align="center">{text}</h4>
   </OutboundLink>
 )
 
-const ExternalCard = ({url, title, siteName, description, images, favicons, imgStyle }) => (
-  <Card style={{
-    position: "relative",
-    maxWidth: "400px"
-    }}>
-    <Card.Header className="text-center">
-      {siteName}
-    </Card.Header>
-    {images.length !== 0 ?
-      <Card.Img src={images[0]} style={imgStyle} alt=""></Card.Img>
-      : ""}
-    <Card.Body>
-      <Row>
-        <Col xs={3} align="center" className="align-self-center">
-          <img src={favicons[0]} alt="" width="100%"/>
+const ExternalCard = ({ url, title, siteName, description, images, favicons, imgStyle }) => (
+  <Card
+    style={{
+      position: "relative",
+      maxWidth: "500px",
+    }}
+  >
+    {siteName ? <Card.Header className="text-center">{siteName}</Card.Header> : ""}
+    <Row>
+      <Col>
+        <Card.Body>
+          <Row>
+            <Col xs={2} align="center" className="align-self-center">
+              <img src={favicons[0]} alt="" width="100%" />
+            </Col>
+            <Col sm={10}>
+              <Card.Title>{title}</Card.Title>
+            </Col>
+            <Card.Subtitle>{description}</Card.Subtitle>
+          </Row>
+        </Card.Body>
+      </Col>
+      {images.length !== 0 ? (
+        <Col sm={4} md={4} lg={4}>
+          <Image src={images[0]} style={{ width: "100%", height: "100%", ...imgStyle }} alt=""></Image>
         </Col>
-        <Col sm={9}>
-          <Card.Title>{title}</Card.Title>
-        </Col>
-      </Row>
-      <Card.Subtitle>{description}</Card.Subtitle>
-    </Card.Body>
+      ) : (
+        ""
+      )}
+    </Row>
     <Card.Footer className="text-muted text-center">{url}</Card.Footer>
-    <OutboundLink href={url} target="_blank" rel="noreferrer" className="stretched-link">
-    </OutboundLink>
+    <OutboundLink href={url} target="_blank" rel="noreferrer" className="stretched-link"></OutboundLink>
   </Card>
-
 )
 
 ExternalCard.propTypes = {
@@ -50,7 +52,7 @@ ExternalCard.propTypes = {
   description: PropTypes.string,
   images: PropTypes.arrayOf(PropTypes.string),
   favicons: PropTypes.arrayOf(PropTypes.string),
-  imgStyle: PropTypes.object
+  imgStyle: PropTypes.object,
 }
 
 ExternalCard.defaultProps = {
@@ -60,7 +62,7 @@ ExternalCard.defaultProps = {
   description: "",
   images: [],
   favicons: [],
-  imgStyle: {}
+  imgStyle: {},
 }
 
 export { ExternalLink, ExternalCard }

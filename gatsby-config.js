@@ -33,6 +33,9 @@ module.exports = {
         defaults: {
           formats: [`auto`, `webp`, `avif`],
           quality: 95,
+          transformOptions: {
+            fit: "inside"
+          }
         },
       },
     },
