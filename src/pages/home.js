@@ -19,7 +19,7 @@ const FeaturedCard = ({ pageDeets }) => (
       backgroundColor: "rgba(var(--bs-light-rgb), 0.35)",
     }}
   >
-    <Card.Img src={"image" in pageDeets ? pageDeets.image : exImg} alt="Card image" />
+    <Card.Img src={"image" in pageDeets ? pageDeets.image : exImg} alt="Card image" className="p-1" />
     <Card.ImgOverlay>
       <Card.Title
         style={{
@@ -45,11 +45,15 @@ const FeaturedCard = ({ pageDeets }) => (
 
 const HomeHeader = ({ children }) => (
   <h1
-    className="display-2 text-primary"
+    className="text-info display-3 my-3"
     style={{
-      // color: "white",
-      fontWeight: "bold",
-      // textShadow: "1px 1px 5px white, 1px -1px 5px white, -1px 1px 5px white, -1px -1px 5px white",
+      fontFamily: "myfont2",
+      // textShadow: "4px 4px 8px #ebebeb",
+      // fontSize: "xxx-large",
+      background: "radial-gradient(circle, #004311, #54c44e)",
+      WebkitBackgroundClip: "text",
+      backgroundClip: "text",
+      color: "transparent",
     }}
   >
     {children}
@@ -72,7 +76,10 @@ const HomePage = () => (
               formats={["auto", "webp", "avif"]}
               alt="My face"
               imgStyle={{ border: "3px solid var(--bs-info)" }}
-              style={{ margin: "10px", boxShadow: "5px 5px 10px 2px var(--bs-info)" }}
+              style={{
+                margin: "10px",
+                boxShadow: "5px 5px 10px 2px var(--bs-info)",
+              }}
             />
           </Col>
           <Col>

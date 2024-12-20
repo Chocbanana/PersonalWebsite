@@ -32,7 +32,7 @@ const LayoutWithToc = ({ children, page }) => {
     } else {
       scrollspy.refresh()
     }
-  }, [children, toc])
+  }, [scrollspy, children, toc])
 
   return (
     <LayoutWithTitle page={page}>
@@ -102,6 +102,7 @@ const LayoutWithTitle = ({ page, children }) => (
               marginBottom: "100px",
               backgroundColor: "rgba(var(--bs-secondary-rgb), 0.95)",
             }}
+            className="text-warning"
           >
             <h5 style={{ fontWeight: "lighter", textAlign: "center", marginBottom: "2rem" }}>{page.description}</h5>
             {children}

@@ -5,7 +5,7 @@ $primary: #54c44e;
 $secondary: #adffed;
 $success: #ffffff;
 $info: #004311;
-$warning: #ebebeb;
+$warning: #40500f;
 $danger: #ebebeb;
 $light: #d0ffa7;
 $dark: #0a3314;
@@ -22,4 +22,26 @@ $dark: #0a3314;
 .nav-link:hover,
 .nav-link:focus {
   color: $primary;
+}
+
+@font-face {
+  font-family: "myfont open-sans";
+  src: url("../data/custfont1.ttf") format("truetype"), url("../data/custfont1.woff") format("woff"),
+    url("../data/custfont1.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "myfont2";
+  src: url("../data/custfont2.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "myfont3";
+  src: url("../data/custfont3.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
