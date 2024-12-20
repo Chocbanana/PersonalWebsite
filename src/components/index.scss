@@ -45,3 +45,18 @@ $dark: #0a3314;
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "myfont4";
+  src: url("../data/custfont4.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "myfont5";
+  src: url("../data/custfont5.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  size-adjust: 120%;
+}

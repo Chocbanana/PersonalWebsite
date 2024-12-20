@@ -10,16 +10,17 @@ import exImg from "../images/pagethumbs/example.png"
 
 const FeaturedCard = ({ pageDeets }) => (
   <Card
-    border="green"
+    // border="warning"
     className="my-3"
     style={{
       maxWidth: "300px",
       // minWidth: "200px",
       position: "relative",
-      backgroundColor: "rgba(var(--bs-light-rgb), 0.35)",
+      backgroundColor: "rgba(var(--bs-light-rgb), 0.6)",
+      // backgroundColor: "var(--bs-light)",
     }}
   >
-    <Card.Img src={"image" in pageDeets ? pageDeets.image : exImg} alt="Card image" className="p-1" />
+    <Card.Img src={"image" in pageDeets ? pageDeets.image : exImg} alt="Card image" />
     <Card.ImgOverlay>
       <Card.Title
         style={{
@@ -27,7 +28,6 @@ const FeaturedCard = ({ pageDeets }) => (
           fontWeight: "bolder",
           fontSize: "xx-large",
           textShadow: "1px 1px 3px black, 1px -1px 3px black, -1px 1px 3px black, -1px -1px 3px black",
-          // WebkitTextStroke: "1px black"
         }}
       >
         {pageDeets.title}
@@ -45,15 +45,16 @@ const FeaturedCard = ({ pageDeets }) => (
 
 const HomeHeader = ({ children }) => (
   <h1
-    className="text-info display-3 my-3"
+    className="text-info display-1 my-3"
     style={{
-      fontFamily: "myfont2",
-      // textShadow: "4px 4px 8px #ebebeb",
-      // fontSize: "xxx-large",
-      background: "radial-gradient(circle, #004311, #54c44e)",
-      WebkitBackgroundClip: "text",
-      backgroundClip: "text",
-      color: "transparent",
+      fontFamily: "myfont5",
+      // textShadow: "6px 6px 5px black",
+      // textShadow: "4px 4px 10px #54c44e",
+      // Tried to get gradient working....it didnt work....
+      // background: "radial-gradient(circle, #004311, #54c44e)",
+      // WebkitBackgroundClip: "text",
+      // backgroundClip: "text",
+      // color: "transparent",
     }}
   >
     {children}
@@ -64,8 +65,9 @@ const HomePage = () => (
   <Layout>
     <Row xs={1} sm={2}>
       <Col>
-        <HomeHeader>Bhavana</HomeHeader>
-        <HomeHeader>Jonnalagadda</HomeHeader>
+        {/* <HomeHeader>Bhavana</HomeHeader>
+        <HomeHeader>Jonnalagadda</HomeHeader> */}
+        <HomeHeader>BHAVANA JONNALAGADDA</HomeHeader>
         <Row>
           <Col align="center" lg={4}>
             <StaticImage

@@ -81,11 +81,12 @@ const LayoutWithTitle = ({ page, children }) => (
         <Row className="d-flex p-2">
           <div className="text-center" style={{ height: "100px" }}>
             <h1
-              className="display-2"
+              className="display-1 my-2"
               style={{
                 color: "white",
                 // fontWeight: "bolder",
-                textShadow: "1px 1px 4px black, -1px 1px 4px black",
+                textShadow: "2px 2px 4px black, -2px 2px 4px black",
+                fontFamily: "myfont5",
               }}
             >
               {page.title}

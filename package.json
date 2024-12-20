@@ -3,7 +3,7 @@
   "private": true,
   "description": "My personal website",
   "version": "0.1.0",
-  "author": "",
+  "author": "Bhavana Jonnalagadda",
   "dependencies": {
     "bootstrap": "^5.2.2",
     "gatsby": "^4.24.4",
