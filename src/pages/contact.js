@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { Form, Button, Row, Col, ListGroup } from "react-bootstrap"
-import { FaFlickr, FaTwitter, FaLinkedin, FaGithub} from 'react-icons/fa'
-import { RiPrinterCloudFill } from 'react-icons/ri'
+import { FaFlickr, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa"
+import { RiPrinterCloudFill } from "react-icons/ri"
 
 import { LayoutWithTitle } from "../components/layout"
 import Seo from "../components/seo"
@@ -11,74 +11,65 @@ import useSiteMetadata from "../hooks/site-metadata"
 
 const page = pageLinks["contact"]
 
-const SocialItem = ({href, Icon, title, children}) => (
-  <ListGroup.Item as="a"
-    target= "_blank"
-    rel= "noreferrer"
-    style={{textDecoration: "none"}}
-    href={href || "/#"}
-    >
-    <div className="fw-bold"><Icon/> {title}</div>
+const SocialItem = ({ href, Icon, title, children }) => (
+  <ListGroup.Item as="a" target="_blank" rel="noreferrer" style={{ textDecoration: "none" }} href={href || "/#"}>
+    <div className="fw-bold">
+      <Icon /> {title}
+    </div>
     {children}
   </ListGroup.Item>
 )
 
 const SitePage = () => {
-  const { linkedIn, flickr, github, twitter } = useSiteMetadata()
+  const { linkedIn, flickr, github, insta } = useSiteMetadata()
 
   return (
     <LayoutWithTitle page={page}>
-
-      <p style={{textAlign:"center"}}>You can find me on the following sites:</p>
+      <p style={{ textAlign: "center" }}>You can find me on the following sites:</p>
 
       <ListGroup horizontal="md" className="justify-content-center text-center my-2">
         <SocialItem href={linkedIn} Icon={FaLinkedin} title="LinkedIn">
-          My resume and all my professional doings. Please don't message me on here, too much recruiter spam
+          My resume and all my professional doings; I only check messages here when actively job-hunting.
         </SocialItem>
         <SocialItem href={flickr} Icon={FaFlickr} title="Flickr">
           All my artwork, along with pictures of my LED projects, in full glorious high-res
         </SocialItem>
-        <SocialItem href="https://www.printables.com/social/44101-fractaly/models" Icon={RiPrinterCloudFill} title="3D Printables">
+        <SocialItem
+          href="https://www.printables.com/social/44101-fractaly/models"
+          Icon={RiPrinterCloudFill}
+          title="3D Printables"
+        >
           Where all my 3d designs and prints are hosted, and you can view and download for free!
         </SocialItem>
         <SocialItem href={github} Icon={FaGithub} title="Github">
           My public programming projects. Don't contact here, I probably won't check
         </SocialItem>
-        <SocialItem href={twitter} Icon={FaTwitter} title="Twitter">
-          My twitter; don't DM me here, I barely check it.
+        <SocialItem href={insta} Icon={FaInstagram} title="Instagram">
+          My public instagram for all my art/flow dance/projects; I mostly check this!
         </SocialItem>
       </ListGroup>
 
-      <p style={{textAlign:"center"}}>But if you'd like to contact me directly you can do so below!</p>
+      <p style={{ textAlign: "center" }}>But if you'd like to contact me directly you can do so below!</p>
 
       <Row className="justify-content-md-center" lg>
-        <Form action="https://getform.io/f/61a2cab5-6892-4100-93ea-49fb3d6f817f"
+        <Form
+          action="https://getform.io/f/61a2cab5-6892-4100-93ea-49fb3d6f817f"
           method="POST"
-          style={{maxWidth: "1000px"}}>
+          style={{ maxWidth: "1000px" }}
+        >
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Name</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="name"
-              name="name" />
+            <Form.Control type="text" placeholder="name" name="name" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="name@example.com"
-              name="email" />
+            <Form.Control type="email" placeholder="name@example.com" name="email" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Your Message</Form.Label>
-            <Form.Control
-              type="text"
-              as="textarea"
-              rows={3}
-              placeholder="Express yourself here"
-              name="message" />
+            <Form.Control type="text" as="textarea" rows={3} placeholder="Express yourself here" name="message" />
           </Form.Group>
-          <input type="hidden" name="_gotcha" style={{display: "none !important"}}/>
+          <input type="hidden" name="_gotcha" style={{ display: "none !important" }} />
           <Form.Group>
             <Form.Label>You are?</Form.Label>
             {/* <Form.Select aria-label="Select who you are" name="whoare" multiple rows={6}> */}
@@ -90,7 +81,7 @@ const SitePage = () => {
             {/* </Form.Select> */}
           </Form.Group>
 
-          <Row style={{marginTop: "20px"}}>
+          <Row style={{ marginTop: "20px" }}>
             <Col>
               <Button variant="primary" className="text-secondary" type="submit">
                 Send email
@@ -108,11 +99,12 @@ const SitePage = () => {
         </Form>
       </Row>
 
-      <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>
+      <div style={{ textAlign: "center" }}>
+        <Link to="/">Go back to the homepage</Link>
+      </div>
     </LayoutWithTitle>
   )
 }
-
 
 export const Head = () => <Seo {...page} />
 

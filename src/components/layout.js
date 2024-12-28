@@ -1,11 +1,11 @@
 /**
  * The main layout of every page in the site. Still need to incude an SEO component per page file.
  */
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { Container, Row, Col, Stack } from "react-bootstrap"
-import { FaFlickr, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa"
+import { FaFlickr, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 import { ScrollSpy } from "bootstrap"
 
@@ -19,6 +19,7 @@ import BgImage from "../images/bgimg.png"
 
 const LayoutWithToc = ({ children, page }) => {
   const [scrollspy, setScrollspy] = useState(null)
+  // const toc = useMemo(TableOfContents, [])
   const toc = <TableOfContents />
 
   useEffect(() => {
@@ -32,7 +33,7 @@ const LayoutWithToc = ({ children, page }) => {
     } else {
       scrollspy.refresh()
     }
-  }, [scrollspy, children, toc])
+  }, [scrollspy, children])
 
   return (
     <LayoutWithTitle page={page}>
@@ -72,6 +73,8 @@ const parallaxBgCss = {
   backgroundPosition: "top center",
 }
 
+// const dateOpts = { year: "numeric", month: "long", date: "numeric" }
+
 const LayoutWithTitle = ({ page, children }) => (
   <>
     <Header />
@@ -105,6 +108,13 @@ const LayoutWithTitle = ({ page, children }) => (
             }}
             className="text-warning"
           >
+            {page.date ? (
+              <h5 style={{ fontWeight: "bolder", textAlign: "center", marginBottom: "2rem" }}>
+                {page.date.toLocaleDateString(undefined, { dateStyle: "long" })}
+              </h5>
+            ) : (
+              ""
+            )}
             <h5 style={{ fontWeight: "lighter", textAlign: "center", marginBottom: "2rem" }}>{page.description}</h5>
             {children}
           </Col>
@@ -155,7 +165,7 @@ const Footer = () => {
       >
         <Row className="flex-row-reverse">
           <Col className="text-end" sm={4}>
-            <Row className="justify-content-end">
+            <Row className="justify-content-end py-1 pe-2">
               <Col>Find me:</Col>
               <Col>
                 <Stack gap={1}>
@@ -167,10 +177,10 @@ const Footer = () => {
                     </OutboundLink>
                   </div>
                   <div>
-                    <FaTwitter />
-                    <OutboundLink {...ftLinksProps} href={siteMetadata?.twitter || "/#"}>
+                    <FaInstagram />
+                    <OutboundLink {...ftLinksProps} href={siteMetadata?.insta || "/#"}>
                       {" "}
-                      Twitter
+                      Instagram
                     </OutboundLink>
                   </div>
                 </Stack>

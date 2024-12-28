@@ -10,7 +10,7 @@ export const useSiteMetadata = () => {
             description
             siteUrl
             linkedIn
-            twitter
+            insta
             flickr
             github
           }

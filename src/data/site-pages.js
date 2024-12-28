@@ -21,6 +21,7 @@ const pageLinks = {
     folder: "3D Printing",
     image: facethumb,
     description: "Face shields I 3D printed and donated to hospitals during Covid-19",
+    date: new Date(2022, 2, 4),
   },
   brainlamp: {
     title: "From MRI to Brain Lamp",
@@ -28,6 +29,7 @@ const pageLinks = {
     folder: "3D Printing",
     image: brainthumb,
     description: "Turned an MRI of my brain into a 3D printable object, and then into a hollow smart lamp",
+    date: new Date(2023, 11, 21),
   },
   octohat: {
     title: "LED Octopus Hat",
@@ -35,6 +37,7 @@ const pageLinks = {
     folder: "LED Projects",
     image: octothumb,
     description: "A lightup octopus hat I coded, 3D model designed, printed, and made!",
+    date: new Date(2022, 10, 26),
   },
   ledgloves: {
     title: "LED Panel Gloves",
@@ -42,6 +45,7 @@ const pageLinks = {
     folder: "LED Projects",
     image: glovethumb,
     description: "LED panel dance gloves with customizable pattens, images, or text",
+    date: new Date(2022, 10, 28),
   },
   art: {
     title: "Art",
@@ -55,6 +59,7 @@ const pageLinks = {
     folder: "Programming",
     image: imgGithub,
     description: "The code for this website, written in the Gatsby framework",
+    date: new Date(),
   },
   gent: {
     title: "GENT Library",
@@ -62,6 +67,7 @@ const pageLinks = {
     folder: "Programming",
     image: imgGithub,
     description: "A library for the easy construction and training of neural networks",
+    date: new Date(2017, 9, 2),
   },
   papers: {
     title: "Research and Papers",
@@ -74,25 +80,6 @@ const pageLinks = {
     url: "/contact",
     description: "If you'd like to reach out ;)",
   },
-
-  // gatsby2: {
-  //   title: "Page 2",
-  //   folder: "Gatsby",
-  //   url: "/gatsby/page-2",
-  //   description: "A simple example of linking to another page within a Gatsby site",
-  // },
-  // gatsbytsx: { title: "TypeScript",
-  //   url: "/gatsby/using-typescript",
-  //   folder: "Gatsby",
-  // },
-  // gatsbyssr: { title: "Server Side Rendering",
-  //   url: "/gatsby/using-ssr",
-  //   folder: "Gatsby",
-  // },
-  // gatsbydsg: { title: "Deferred Static Generation",
-  //   url: "/gatsby/using-dsg",
-  //   folder: "Gatsby",
-  // },
 }
 
 export default pageLinks

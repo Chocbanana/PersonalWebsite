@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Bhav's Personal Website`,
     description: `My website for displaying all my projects and public work: 3D printing, LED wearables, traditional art, academic papers, AI research, and more!`,
-    twitter: `https://twitter.com/justlurkingcoc1`,
+    insta: `https://www.instagram.com/bhavan.art/`,
     siteUrl: `https://chocbanana.github.io`,
     linkedIn: `https://www.linkedin.com/in/bhavanajonn`,
     flickr: `https://www.flickr.com/photos/135898386@N03/albums`,

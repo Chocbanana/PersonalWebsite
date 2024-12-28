@@ -10,7 +10,7 @@ import exImg from "../images/pagethumbs/example.png"
 
 const FeaturedCard = ({ pageDeets }) => (
   <Card
-    // border="warning"
+    border="light"
     className="my-3"
     style={{
       maxWidth: "300px",
@@ -36,6 +36,13 @@ const FeaturedCard = ({ pageDeets }) => (
     <Card.Body>
       <Card.Text>{pageDeets.description}</Card.Text>
     </Card.Body>
+    {pageDeets.date ? (
+      <Card.Footer className="p-1 text-muted">
+        <small>{pageDeets.date.toLocaleDateString()}</small>
+      </Card.Footer>
+    ) : (
+      ""
+    )}
     {/* To make the entire card clickable, also need the position=relative above */}
     <a href={pageDeets.url} className="stretched-link">
       {" "}
@@ -63,12 +70,12 @@ const HomeHeader = ({ children }) => (
 
 const HomePage = () => (
   <Layout>
-    <Row xs={1} sm={2}>
+    <Row md={1} lg={2}>
       <Col>
         {/* <HomeHeader>Bhavana</HomeHeader>
         <HomeHeader>Jonnalagadda</HomeHeader> */}
         <HomeHeader>BHAVANA JONNALAGADDA</HomeHeader>
-        <Row>
+        <Row className="my-3">
           <Col align="center" lg={4}>
             <StaticImage
               src="../images/myfacesquare.jpg"
@@ -88,6 +95,10 @@ const HomePage = () => (
             <h4 style={{ fontWeight: "lighter" }}>
               Welcome! This is my website for displaying all my projects and public work: 3D printing, LED wearables,
               traditional art, academic papers, AI research, and more!
+            </h4>
+            <h4 style={{ fontWeight: "lighter" }}>
+              My contact info is located in the bottom-right of the footer below or the "Contact Me" page in the
+              top-right of the navbar.
             </h4>
           </Col>
         </Row>

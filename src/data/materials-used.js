@@ -202,6 +202,7 @@ export const MaterialsUsedBrainLamp = () => (
             href="https://atomicfilament.com/collections/petg-3d-printer-filament-us-made-with-free-shipping/products/rose-gold-metallic-translucent-petg-pro?variant=31476397047869"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Atomic Filament Rose Gold Translucent PETG"
           >
             Atomic Filament Rose Gold Translucent PETG
           </a>
