@@ -1,17 +1,67 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Col, Row, Table } from "react-bootstrap"
 
-import { LayoutWithTitle } from "../components/layout"
+import { LayoutWithToc } from "../components/layout"
 import Seo from "../components/seo"
 import pageLinks from "../data/site-pages"
+import { ExternalCard } from "../components/external-links"
+import paperData from "../data/my_papers.json"
+
+const defTxt = x => x
+const paperKeys = {
+  title: ["Title", defTxt],
+  creators: ["Authors", x => x.map(x => x.firstName + " " + x.lastName).join(", ")],
+  date: ["Date", defTxt],
+  DOI: ["DOI", defTxt],
+  abstractNote: ["Abstract", defTxt],
+  itemType: ["Type", defTxt],
+  tags: ["Tags", x => x.map(x => x.tag).join(", ")],
+  url: [
+    "Url",
+    x => (
+      <a target="_blank" rel="noopener noreferrer" href={x}>
+        {x}
+      </a>
+    ),
+  ],
+}
+
+const PaperTable = ({ item }) => (
+  <Table bordered hover striped="columns" variant="dark">
+    <tbody>
+      {Object.entries(paperKeys).map(([k, v]) => (
+        <tr>
+          <td>{v[0]}</td>
+          <td>{v[1](item[k])}</td>
+        </tr>
+      ))}
+    </tbody>
+  </Table>
+)
 
 const page = pageLinks["papers"]
 
-const SitePage = () => {
+const SitePage = ({ pageContext }) => {
   return (
-    <LayoutWithTitle page={page}>
+    <LayoutWithToc page={page}>
+      <Col>
+        <Row>
+          <Col>
+            <h2 className>My ORCID</h2>
+          </Col>
+          <Col>
+            <ExternalCard {...pageContext.linkPreviewData[0]} />
+          </Col>
+        </Row>
+        <Row>
+          <h2>Preprints</h2>
+          {paperData.items.map(x => (
+            <PaperTable item={x} />
+          ))}
+        </Row>
+      </Col>
 
-      <p style={{textAlign: "center"}}>
+      {/* <p style={{textAlign: "center"}}>
         My thesis from undergrad: Exploring More Biologically-Inspired Recurrent Neural Networks.
         It is not yet complete but will be updated soon, and in the meantime you can view the
         document below.
@@ -24,10 +74,8 @@ const SitePage = () => {
         construct an ANN to represent a biological circuit in the mouse visual system.
       </p>
 
-      <iframe title="thesis" src="https://docs.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1SeGrkOLZq3bLLyp_tlT18FL2ny6hf2-J&hl=en&embedded=true" style={{width:"100%", height:"800px"}} frameborder="0"></iframe>
-
-      <div style={{textAlign:"center"}}><Link to="/">Go back to the homepage</Link></div>
-    </LayoutWithTitle>
+      <iframe title="thesis" src="https://docs.google.com/gview?a=v&pid=explorer&chrome=false&api=true&embedded=true&srcid=1SeGrkOLZq3bLLyp_tlT18FL2ny6hf2-J&hl=en&embedded=true" style={{width:"100%", height:"800px"}} frameborder="0"></iframe> */}
+    </LayoutWithToc>
   )
 }
 

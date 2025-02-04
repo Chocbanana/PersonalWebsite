@@ -10,6 +10,7 @@ const previewLinks = {
   printing: ["https://github.com/Chocbanana/Gent"],
   // printing: ["https://www.printables.com/@Fractaly/models"],
   led: ["https://www.etsy.com/listing/1082658511/paper-thin-led-matrix-diy-tech-component"],
+  papers: ["https://orcid.org/0009-0009-1054-0995"],
 }
 
 // Query, server/build build time, for data from external website for link previews
@@ -64,6 +65,10 @@ exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) =>
         },
         {
           test: /\.h/,
+          type: "asset/source",
+        },
+        {
+          test: /\.bib/,
           type: "asset/source",
         },
       ],
