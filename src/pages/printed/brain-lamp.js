@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { LayoutWithToc } from "../../components/layout"
 import Seo from "../../components/seo"
 import pageLinks from "../../data/site-pages"
-import { FlickrAlbum } from "../../components/flickr-embed"
+import { FlickrAlbum } from "../../components/embed"
 import { ExternalCard } from "../../components/external-links"
 import { MaterialsUsedBrainLamp } from "../../data/materials-used"
 

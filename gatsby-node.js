@@ -11,6 +11,7 @@ const previewLinks = {
   // printing: ["https://www.printables.com/@Fractaly/models"],
   led: ["https://www.etsy.com/listing/1082658511/paper-thin-led-matrix-diy-tech-component"],
   papers: ["https://orcid.org/0009-0009-1054-0995"],
+  bestagons: ["https://apogaea.com/2024/04/16/apogaea-2024-seed-grant-winners-announced/"],
 }
 
 // Query, server/build build time, for data from external website for link previews

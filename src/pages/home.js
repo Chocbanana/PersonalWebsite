@@ -107,6 +107,9 @@ const HomePage = () => (
         <HomeHeader>Featured Work</HomeHeader>
         <Row style={{ marginBottom: "20px" }} xs={1} sm={1} xl={2} xxl={3}>
           <Col>
+            <FeaturedCard pageDeets={pageLinks["bestagons"]} />
+          </Col>
+          <Col>
             <FeaturedCard pageDeets={pageLinks["faceshields"]} />
           </Col>
           <Col>

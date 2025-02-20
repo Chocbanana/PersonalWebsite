@@ -10,11 +10,12 @@ const ExternalLink = ({ href, text }) => (
   </OutboundLink>
 )
 
-const ExternalCard = ({ url, title, siteName, description, images, favicons, imgStyle }) => (
+const ExternalCard = ({ url, title, siteName, description, images, favicons, imgStyle, cardStyle }) => (
   <Card
     style={{
       position: "relative",
       maxWidth: "500px",
+      ...cardStyle,
     }}
   >
     {siteName ? <Card.Header className="text-center">{siteName}</Card.Header> : ""}
@@ -28,7 +29,7 @@ const ExternalCard = ({ url, title, siteName, description, images, favicons, img
             <Col sm={10}>
               <Card.Title>{title}</Card.Title>
             </Col>
-            <Card.Subtitle>{description}</Card.Subtitle>
+            <Card.Subtitle>{description.substring(0, 100)}</Card.Subtitle>
           </Row>
         </Card.Body>
       </Col>
@@ -53,6 +54,7 @@ ExternalCard.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string),
   favicons: PropTypes.arrayOf(PropTypes.string),
   imgStyle: PropTypes.object,
+  cardStyle: PropTypes.object,
 }
 
 ExternalCard.defaultProps = {
@@ -63,6 +65,7 @@ ExternalCard.defaultProps = {
   images: [],
   favicons: [],
   imgStyle: {},
+  cardStyle: {},
 }
 
 export { ExternalLink, ExternalCard }

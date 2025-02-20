@@ -6,6 +6,7 @@ import octothumb from "../images/pagethumbs/octothumb.jpg"
 import glovethumb from "../images/pagethumbs/gloves.jpg"
 import facethumb from "../images/pagethumbs/faceshields.jpg"
 import brainthumb from "../images/pagethumbs/brainthumb.jpg"
+import bestthumb from "../images/pagethumbs/bestagons.jpeg"
 
 const pageLinks = {
   printing: {
@@ -30,6 +31,14 @@ const pageLinks = {
     image: brainthumb,
     description: "Turned an MRI of my brain into a 3D printable object, and then into a hollow smart lamp",
     date: new Date(2023, 11, 21),
+  },
+  bestagons: {
+    title: "The Bestagons",
+    url: "/led-projects/bestagons",
+    folder: "LED Projects",
+    image: bestthumb,
+    description: "My dynamic large-scale LED art made of a hexagonal lattice and infinity mirrors",
+    date: new Date(2024, 5, 4),
   },
   octohat: {
     title: "LED Octopus Hat",

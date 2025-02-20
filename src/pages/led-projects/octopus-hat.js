@@ -6,7 +6,7 @@ import { CodeBlock } from "react-code-blocks"
 import { LayoutWithToc } from "../../components/layout"
 import Seo from "../../components/seo"
 import pageLinks from "../../data/site-pages"
-import { FlickrAlbum } from "../../components/flickr-embed"
+import { FlickrAlbum } from "../../components/embed"
 import { MaterialsUsedOctopus } from "../../data/materials-used"
 
 import gif1 from "../../images/octopus-hat/pattern_bouncy.gif"
