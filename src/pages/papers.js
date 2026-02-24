@@ -8,13 +8,21 @@ import { ExternalCard } from "../components/external-links"
 import paperData from "../data/my_papers.json"
 
 const defTxt = x => x
+const hasContent = value => {
+  if (value == null) return false
+  if (typeof value === "string") return value.trim() !== ""
+  if (Array.isArray(value)) return value.length > 0
+  return true
+}
 const paperKeys = {
   title: ["Title", defTxt],
   creators: ["Authors", x => x.map(x => x.firstName + " " + x.lastName).join(", ")],
   date: ["Date", defTxt],
+  publicationTitle: ["Publication", defTxt],
+  archive: ["Archive", defTxt],
   DOI: ["DOI", defTxt],
   abstractNote: ["Abstract", defTxt],
-  itemType: ["Type", defTxt],
+  // itemType: ["Type", defTxt],
   tags: ["Tags", x => x.map(x => x.tag).join(", ")],
   url: [
     "Url",
@@ -29,12 +37,14 @@ const paperKeys = {
 const PaperTable = ({ item }) => (
   <Table bordered hover striped="columns" variant="dark">
     <tbody>
-      {Object.entries(paperKeys).map(([k, v]) => (
-        <tr>
-          <td>{v[0]}</td>
-          <td>{v[1](item[k])}</td>
-        </tr>
-      ))}
+      {Object.entries(paperKeys)
+        .filter(([k]) => hasContent(item[k]))
+        .map(([k, v]) => (
+          <tr>
+            <td>{v[0]}</td>
+            <td>{v[1](item[k])}</td>
+          </tr>
+        ))}
     </tbody>
   </Table>
 )
@@ -54,10 +64,20 @@ const SitePage = ({ pageContext }) => {
           </Col>
         </Row>
         <Row>
+          <h2>Publications</h2>
+          {paperData.items
+            .filter(x => x.itemType !== "preprint")
+            .map(x => (
+              <PaperTable item={x} />
+            ))}
+        </Row>
+        <Row>
           <h2>Preprints</h2>
-          {paperData.items.map(x => (
-            <PaperTable item={x} />
-          ))}
+          {paperData.items
+            .filter(x => x.itemType === "preprint")
+            .map(x => (
+              <PaperTable item={x} />
+            ))}
         </Row>
       </Col>
 

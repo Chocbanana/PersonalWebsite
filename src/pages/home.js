@@ -74,7 +74,18 @@ const HomePage = () => (
       <Col>
         {/* <HomeHeader>Bhavana</HomeHeader>
         <HomeHeader>Jonnalagadda</HomeHeader> */}
-        <HomeHeader>BHAVANA JONNALAGADDA</HomeHeader>
+        <h1
+          className="display-1 my-3"
+          style={{
+            color: "white",
+            // fontWeight: "bolder",
+            textShadow: "2px 2px 4px black, -2px 2px 4px black",
+            fontFamily: "myfont5",
+          }}
+        >
+          BHAVANA JONNALAGADDA
+        </h1>
+        {/* <HomeHeader>BHAVANA JONNALAGADDA</HomeHeader> */}
         <Row className="my-3">
           <Col align="center" lg={4}>
             <StaticImage
@@ -119,10 +130,10 @@ const HomePage = () => (
             <FeaturedCard pageDeets={pageLinks["octohat"]} />
           </Col>
           <Col>
-            <FeaturedCard pageDeets={pageLinks["printing"]} />
+            <FeaturedCard pageDeets={pageLinks["papers"]} />
           </Col>
           <Col>
-            <FeaturedCard pageDeets={pageLinks["papers"]} />
+            <FeaturedCard pageDeets={pageLinks["printing"]} />
           </Col>
           <Col>
             <FeaturedCard pageDeets={pageLinks["art"]} />

@@ -14,23 +14,26 @@
       "autoExportPathReplaceDirSep": "-",
       "autoExportPathReplaceSpace": " ",
       "automaticTags": true,
-      "autoPinDelay": 0,
+      "autoPinDelay": 2,
+      "autoPinOverwrite": false,
       "auxImport": false,
       "baseAttachmentPath": "/Users/bjonnalagadda/OneDrive/Papers/Zotero Library",
       "biblatexExtendedDateFormat": true,
       "biblatexExtendedNameFormat": true,
       "biblatexExtractEprint": true,
+      "biblatexUsePrefix": true,
       "bibtexEditionOrdinal": false,
       "bibtexParticleNoOp": false,
       "bibtexURL": "off",
       "cache": true,
       "cacheDelete": false,
-      "cacheRetain": false,
       "charmap": "",
+      "chinese": false,
+      "chineseSplitName": true,
       "citeCommand": "cite",
       "citekeyCaseInsensitive": true,
       "citekeyFold": true,
-      "citekeyFormat": "auth.lower+shorttitle(3,3)+year",
+      "citekeyFormat": "auth.lower + shorttitle(3, 3) + year",
       "citekeySearch": true,
       "citekeyUnsafeChars": "\\\"#%'(),={}~",
       "csquotes": "",
@@ -52,15 +55,14 @@
       "importJabRefAbbreviations": true,
       "importJabRefStrings": true,
       "importNoteToExtra": "",
+      "importPlaceEvent": "inproceedings,conference,presentation,talk",
       "importSentenceCase": "on+guess",
       "importSentenceCaseQuoted": true,
       "importUnknownTexCommand": "ignore",
       "itemObserverDelay": 5,
       "jabrefFormat": 0,
-      "jieba": false,
-      "keyConflictPolicy": "keep",
+      "japanese": false,
       "keyScope": "library",
-      "kuroshiro": false,
       "language": "langid",
       "mapMath": "",
       "mapText": "",
@@ -79,6 +81,7 @@
       "rawImports": false,
       "rawLaTag": "#LaTeX",
       "relativeFilePaths": false,
+      "remigrate": false,
       "separatorList": "and",
       "separatorNames": "and",
       "skipFields": "",
@@ -94,34 +97,40 @@
       "Items": true,
       "Normalize": false,
       "Preferences": true,
-      "cache": true,
-      "exportDir": "/Users/bjonnalagadda/Library/CloudStorage/OneDrive-Personal/Documents/Programming/Git/PersonalWebsite/src/data",
       "exportFileData": false,
       "exportNotes": false,
-      "exportPath": "/Users/bjonnalagadda/Library/CloudStorage/OneDrive-Personal/Documents/Programming/Git/PersonalWebsite/src/data/my_papers.json",
       "keepUpdated": false,
-      "worker": false
+      "worker": true,
+      "exportDir": "/Users/bjonnalagadda/Library/CloudStorage/OneDrive-Personal/Documents/Programming/Git/PersonalWebsite/src/data",
+      "exportPath": "/Users/bjonnalagadda/Library/CloudStorage/OneDrive-Personal/Documents/Programming/Git/PersonalWebsite/src/data/my_papers.json"
     }
   },
   "version": {
-    "zotero": "7.0.9",
-    "bbt": "7.0.5"
+    "zotero": "8.0.3",
+    "bbt": "8.0.25"
   },
   "collections": {},
   "items": [
     {
-      "version": 3365,
-      "itemType": "preprint",
+      "key": "8UZY2JRG",
+      "version": 3919,
+      "itemType": "journalArticle",
       "title": "Evaluation of data driven low-rank matrix factorization for accelerated solutions of the Vlasov equation",
-      "abstractNote": "Low-rank methods have shown success in accelerating simulations of a collisionless plasma described by the Vlasov equation, but still rely on computationally costly linear algebra every time step. We propose a data-driven factorization method using artificial neural networks, specifically with convolutional layer architecture, that trains on existing simulation data. At inference time, the model outputs a low-rank decomposition of the distribution field of the charged particles, and we demonstrate that this step is faster than the standard linear algebra technique. Numerical experiments show that the method effectively interpolates time-series data, generalizing to unseen test data in a manner beyond just memorizing training data; patterns in factorization also inherently followed the same numerical trend as those within algebraic methods (e.g., truncated singular-value decomposition). However, when training on the first 70% of a time-series data and testing on the remaining 30%, the method fails to meaningfully extrapolate. Despite this limiting result, the technique may have benefits for simulations in a statistical steady-state or otherwise showing temporal stability.",
-      "date": "2024-12-27",
-      "libraryCatalog": "arXiv.org",
-      "url": "http://arxiv.org/abs/2501.04024",
-      "accessDate": "2025-02-03T22:01:16Z",
-      "extra": "arXiv:2501.04024 [math]",
-      "DOI": "10.48550/arXiv.2501.04024",
-      "repository": "arXiv",
-      "archiveID": "arXiv:2501.04024",
+      "abstractNote": "Low-rank methods have shown success in accelerating simulations of a collisionless plasma described by the Vlasov equation, but still rely on computationally costly linear algebra every time step. We propose a data-driven factorization method using artificial neural networks, specifically with convolutional layer architecture, that trains on existing simulation data. At inference time, the model outputs a low-rank decomposition of the distribution field of the charged particles, and we demonstrate that this step is faster than the standard linear algebra technique. Numerical experiments show that the method achieves comparable reconstruction accuracy for interpolation tasks, generalizing to unseen test data in a manner beyond just memorizing training data; patterns in factorization also inherently followed the same numerical trend as those within algebraic methods (e.g., truncated singular-value decomposition). However, when training on the first 70% of a time-series data and testing on the remaining 30%, the method fails to meaningfully extrapolate. Despite this limiting result, the technique may have benefits for simulations in a statistical steady-state or otherwise showing temporal stability. These results suggest that while the model offers a computationally efficient alternative for datasets with temporal stability, its current formulation is best suited for interpolation rather than for predicting future states in time-evolving systems. This study thus lays the groundwork for further refinement of neural network-based approaches to low-rank matrix factorization in high-dimensional plasma simulations.",
+      "date": "Jun 9, 2025",
+      "language": "en",
+      "libraryCatalog": "PLoS Journals",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0325304",
+      "accessDate": "2025-06-11T16:58:29Z",
+      "extra": "0 citations (Crossref/DOI) [2025-06-11]",
+      "volume": "20",
+      "publisher": "Public Library of Science",
+      "pages": "e0325304",
+      "publicationTitle": "PLOS ONE",
+      "DOI": "10.1371/journal.pone.0325304",
+      "issue": "6",
+      "journalAbbreviation": "PLOS ONE",
+      "ISSN": "1932-6203",
       "creators": [
         {
           "firstName": "Bhavana",
@@ -136,53 +145,112 @@
       ],
       "tags": [
         {
-          "tag": "Computer Science - Numerical Analysis",
+          "tag": "Deep learning",
           "type": 1
         },
         {
-          "tag": "Mathematics - Numerical Analysis",
+          "tag": "Neural networks",
           "type": 1
         },
         {
-          "tag": "Statistics - Machine Learning",
+          "tag": "Simulation and modeling",
+          "type": 1
+        },
+        {
+          "tag": "Extrapolation",
+          "type": 1
+        },
+        {
+          "tag": "Interpolation",
+          "type": 1
+        },
+        {
+          "tag": "Linear algebra",
+          "type": 1
+        },
+        {
+          "tag": "Network analysis",
+          "type": 1
+        },
+        {
+          "tag": "Singular value decomposition",
           "type": 1
         }
       ],
       "relations": {},
-      "dateAdded": "2025-02-03T22:01:16Z",
-      "dateModified": "2025-02-03T22:01:16Z",
-      "uri": "http://zotero.org/users/8898930/items/5KPQ9BFT",
+      "dateAdded": "2025-06-11T16:58:29Z",
+      "dateModified": "2025-06-11T16:58:31Z",
+      "uri": "http://zotero.org/users/8898930/items/8UZY2JRG",
+      "itemID": 2448,
       "attachments": [
         {
           "itemType": "attachment",
-          "title": "Preprint PDF",
+          "title": "Full Text PDF",
+          "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0325304&type=printable",
           "tags": [],
           "relations": {},
-          "dateAdded": "2025-02-03T22:01:18Z",
-          "dateModified": "2025-02-03T22:01:18Z",
-          "uri": "http://zotero.org/users/8898930/items/HUBIE3DB",
-          "path": "/Users/bjonnalagadda/Documents/Zotero Library/storage/HUBIE3DB/Jonnalagadda and Becker - 2024 - Evaluation of data driven low-rank matrix factorization for accelerated solutions of the Vlasov equa.pdf",
-          "select": "zotero://select/library/items/HUBIE3DB"
-        },
-        {
-          "itemType": "attachment",
-          "title": "Snapshot",
-          "tags": [],
-          "relations": {},
-          "dateAdded": "2025-02-03T22:01:24Z",
-          "dateModified": "2025-02-03T22:01:24Z",
-          "uri": "http://zotero.org/users/8898930/items/528A3CSE",
-          "path": "/Users/bjonnalagadda/Documents/Zotero Library/storage/528A3CSE/2501.html",
-          "select": "zotero://select/library/items/528A3CSE"
+          "dateAdded": "2025-06-11T16:58:31Z",
+          "dateModified": "2025-06-11T16:58:31Z",
+          "uri": "http://zotero.org/users/8898930/items/QW9633P2",
+          "path": "/Users/bjonnalagadda/Documents/Zotero Library/storage/QW9633P2/Jonnalagadda and Becker - 2025 - Evaluation of data driven low-rank matrix factorization for accelerated solutions of the Vlasov equa.pdf",
+          "select": "zotero://select/library/items/QW9633P2"
         }
       ],
       "notes": [],
-      "citationKey": "jonnalagaddaEvaluationDataDriven2024",
       "autoJournalAbbreviation": "",
-      "itemID": 2346,
-      "itemKey": "5KPQ9BFT",
+      "itemKey": "8UZY2JRG",
       "libraryID": 1,
-      "select": "zotero://select/library/items/5KPQ9BFT"
+      "select": "zotero://select/library/items/8UZY2JRG"
+    },
+    {
+      "key": "7APJGL7U",
+      "version": 3926,
+      "itemType": "preprint",
+      "title": "Seq2KING: An unsupervised internal transformer representation of global human heritages",
+      "abstractNote": "Determining the intricate tapestry of human genetic relationships is a central challenge in population genetics and precision medicine. We propose that the principles of lexical connectivity, which words derive meaning from their contextual interactions, can be adapted to genetic data, enabling transformer models to reveal that individuals with higher genetic similarity form stronger latent connections. We explored this by transposing KING kinship-related matrices into the (query, key, value) QKV latent space within transformer models and determined that attention mechanisms can capture genetic relatedness in an unsupervised fashion. We found that individuals had an attention weight connectivity of 85.34% (p&lt;0.05) if they were from within the same continent, compared to if they were from other continents. Surprisingly, we found that some encoder layers required inversion of their latent representations for this connectivity to become obvious. Lastly, we used BERTViz to create human-readable hyper-dense connectivity patterns among individuals. Our approach is purely based on attention, which yields a non-discrete spectrum of relatedness, and thus uncovers patterns on first principles. Seq2KING addresses the significant challenge of discovering population structures to construct a global human relatedness map, without relying on predefined labels. Our excavation into the latent space is a paradigm shift from legacy-supervised genetic methodologies, which presents a new way to understand the human pangenome as well as discern population substructures for creating precision genetic medicines.Non-Expert Description Is it possible to build artificial intelligence (AI) to read the human genome as a first language? Why would one want such AI? We at Ecotone believe that such AI will provide the genetic coordinates needed to manufacture CRISPRs medications to cure about ∼10,000 genetic diseases. How does one build such AI? Our recently released model dnaSORA proposed a means to assign meaning to every single token (typically referred to as a base) of all 3 billion tokens in the human genome (Koreniuk and Njie, 2025). This builds the vocabulary for reading the human genome as a first language. For dnaSORA to work, it needs to know the heritages of people that are in its model of our genetics. We mostly rely on country, culture and geography to determine our heritages, but this is too error-prone for dnaSORA. Also error-prone in our experience are legacy genetic approaches such as those used by 23andMe.Our research here introduces Seq2KING, a new artificial intelligence method that is based on excavating the insides of transformers to uncover hidden patterns of genetic relatedness among people around the world—without needing any prior labels or categorizations. The key innovation of Seq2KING is applying the principles of lexical connectivity— how words derive meaning through their relationships to other words—to genetic data. Just as “dog” gains meaning through its connections to words like “pet,” “animal,” and “loyal,” we show that individuals’ genomes can be understood through their genetic connections to others. We start by converting raw genetic data into a compact kinship matrix (using a tool called KING) that summarizes how closely everyone is related. We then feed these kinship values into a transformer model—the same kind of AI behind cutting-edge language tools like ChatGPT.Inside the transformer, special components called “attention heads” learn which individuals are most similar, strengthening links between people from the same region and showing subtler connections across continents. Unlike legacy approaches that rely on discrete pre-defined categories, Seq2KING provides continuous measures of relatedness, allowing us to visualize connections between any individual and all other humans. Additionally, because Seq2KING operates directly within the transformer’s internal reasoning system, it can be seamlessly integrated as a component within larger genome interpretation systems—essentially functioning like high-speed cache memory for heritage assignments, dramatically improving both efficiency and scalability. By examining these attention patterns, we can reconstruct familiar population groupings—such as European, African, and Asian heritage—entirely by the model’s internal logic. Finally, we use a visualization technique (BERTViz) to turn these dense connection maps into intuitive diagrams that highlight population connections between individuals.Because our approach doesn’t rely on pre-assigned labels, it offers a truly unbiased way to explore human population structure. This could help scientists trace migration routes that resulted in the peopling of the continents, find subtle subgroups within larger populations, and remove “background noise” in genetic studies of disease. Ultimately, Seq2KING paves the way for more precise genetic maps of all humans, revealing the natural “family trees” hidden in our DNA and bringing us one step closer to reading the human genome as a first language.Competing Interest StatementThe authors have declared no competing interest.",
+      "date": "2025-01-01",
+      "archive": "bioRxiv",
+      "url": "http://biorxiv.org/content/early/2025/06/23/2025.06.17.660172.abstract",
+      "extra": "0 citations (Crossref/DOI) [2025-07-01]",
+      "DOI": "10.1101/2025.06.17.660172",
+      "citationKey": "seq2king",
+      "creators": [
+        {
+          "firstName": "Bhavana",
+          "lastName": "Jonnalagadda",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "eMalick",
+          "lastName": "Njie",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-07-01T19:41:40Z",
+      "dateModified": "2026-02-24T03:02:23Z",
+      "uri": "http://zotero.org/users/8898930/items/7APJGL7U",
+      "itemID": 2453,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Full Text PDF",
+          "url": "https://www.biorxiv.org/content/biorxiv/early/2025/07/03/2025.06.17.660172.full.pdf",
+          "tags": [],
+          "relations": {},
+          "dateAdded": "2026-02-24T02:49:24Z",
+          "dateModified": "2026-02-24T02:49:24Z",
+          "uri": "http://zotero.org/users/8898930/items/AVLSM65L",
+          "path": "/Users/bjonnalagadda/Documents/Zotero Library/storage/AVLSM65L/Jonnalagadda and Njie - 2025 - Seq2KING An unsupervised internal transformer representation of global human heritages.pdf",
+          "select": "zotero://select/library/items/AVLSM65L"
+        }
+      ],
+      "notes": [],
+      "autoJournalAbbreviation": "",
+      "itemKey": "7APJGL7U",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/7APJGL7U"
     }
   ]
 }
